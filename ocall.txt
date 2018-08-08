@@ -1,0 +1,1080 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Route","metadata":{"annotations":{},"labels":{"metrics-infra":"hawkular-metrics"},"name":"hawkular-metrics","namespace":"openshift-infra"},"spec":{"host":"hawkular-metrics.apps004.amosdemo.io","tls":{"destinationCACertificate":"-----BEGIN CERTIFICATE-----\nMIIC5jCCAc6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAkMSIwIAYDVQQDDBltZXRy\naWNzLXNpZ25lckAxNTMzNzA0NzM5MB4XDTE4MDgwODA1MDUzOFoXDTIzMDgwNzA1\nMDUzOVowJDEiMCAGA1UEAwwZbWV0cmljcy1zaWduZXJAMTUzMzcwNDczOTCCASIw\nDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMDnxsfKJwIAs69PwEFIVgNfQk60\nIDy13x0P+NAgGNB0KJNeFwJOR+SltouQ8r8VxBI8r1jpk2NfN8t1oSoh+lWFFumm\njAosf7IYwFMTEmnJ5ltO5taNKefk2+WCyxLnKjfyKUnI6Ma17LNRhAswuc+z4IEJ\nd7/MBXr2Ojk0W1gNWPI+4oqG1s0M5No7M79oFkGBgl5qxdgjKIYOAQEih6mJW4JC\nkcsXMV0bCcf/I2rmp8wE3DWveIk+whBLoY9YpXaXd52sKpHn6XikfQpZHvRhEZd6\nUjtzfWSQStg0JCyQd7icKmrnEh/3GIZ0IU5xmcR6OqrcTJRAGbk6WFYyzPMCAwEA\nAaMjMCEwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcN\nAQELBQADggEBABtGWg1fVcUto+qLuu+US9rE0/alAwi444jms7O+8hcj9Jwu330Z\nykYz3xH7ojxTF0iYfBN7SquJ0EMZvYo9pDs1RmFeE0xDPCKQixPoQ+2gu3BuuzG7\nJaK64mUlX7Bik33tonvFWull3IqWaZ/X7kHurEsJFmiMWHU+WugPODsmLogedLVm\nf8vR9ftX6u6Nig6TWkK5+n/pbMn3a1j9QWrJrDF6J0DB4sQTxMXNtTWhb2QV68xD\nv+xTqjvCQcnCRPYgt8ldnHFzpiC76XyZqdBY25aS/zgukTvklRh6DTdnyqlGy5m+\np8ibVIhr3E0t4QpSy/YtjTdcyx4eJL6U2V8=\n-----END CERTIFICATE-----\n","termination":"reencrypt"},"to":{"kind":"Service","name":"hawkular-metrics"}}}
+    creationTimestamp: 2018-07-13T10:28:38Z
+    labels:
+      metrics-infra: hawkular-metrics
+    name: hawkular-metrics
+    namespace: openshift-infra
+    resourceVersion: "4276601"
+    selfLink: /apis/route.openshift.io/v1/namespaces/openshift-infra/routes/hawkular-metrics
+    uid: 8123c22a-8687-11e8-8809-06b7f93be214
+  spec:
+    host: hawkular-metrics.apps004.amosdemo.io
+    tls:
+      destinationCACertificate: |
+        -----BEGIN CERTIFICATE-----
+        MIIC5jCCAc6gAwIBAgIBATANBgkqhkiG9w0BAQsFADAkMSIwIAYDVQQDDBltZXRy
+        aWNzLXNpZ25lckAxNTMzNzA0NzM5MB4XDTE4MDgwODA1MDUzOFoXDTIzMDgwNzA1
+        MDUzOVowJDEiMCAGA1UEAwwZbWV0cmljcy1zaWduZXJAMTUzMzcwNDczOTCCASIw
+        DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMDnxsfKJwIAs69PwEFIVgNfQk60
+        IDy13x0P+NAgGNB0KJNeFwJOR+SltouQ8r8VxBI8r1jpk2NfN8t1oSoh+lWFFumm
+        jAosf7IYwFMTEmnJ5ltO5taNKefk2+WCyxLnKjfyKUnI6Ma17LNRhAswuc+z4IEJ
+        d7/MBXr2Ojk0W1gNWPI+4oqG1s0M5No7M79oFkGBgl5qxdgjKIYOAQEih6mJW4JC
+        kcsXMV0bCcf/I2rmp8wE3DWveIk+whBLoY9YpXaXd52sKpHn6XikfQpZHvRhEZd6
+        UjtzfWSQStg0JCyQd7icKmrnEh/3GIZ0IU5xmcR6OqrcTJRAGbk6WFYyzPMCAwEA
+        AaMjMCEwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcN
+        AQELBQADggEBABtGWg1fVcUto+qLuu+US9rE0/alAwi444jms7O+8hcj9Jwu330Z
+        ykYz3xH7ojxTF0iYfBN7SquJ0EMZvYo9pDs1RmFeE0xDPCKQixPoQ+2gu3BuuzG7
+        JaK64mUlX7Bik33tonvFWull3IqWaZ/X7kHurEsJFmiMWHU+WugPODsmLogedLVm
+        f8vR9ftX6u6Nig6TWkK5+n/pbMn3a1j9QWrJrDF6J0DB4sQTxMXNtTWhb2QV68xD
+        v+xTqjvCQcnCRPYgt8ldnHFzpiC76XyZqdBY25aS/zgukTvklRh6DTdnyqlGy5m+
+        p8ibVIhr3E0t4QpSy/YtjTdcyx4eJL6U2V8=
+        -----END CERTIFICATE-----
+      termination: reencrypt
+    to:
+      kind: Service
+      name: hawkular-metrics
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: 2018-07-13T10:28:38Z
+        status: "True"
+        type: Admitted
+      host: hawkular-metrics.apps004.amosdemo.io
+      routerName: router
+      wildcardPolicy: None
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/scc: restricted
+    creationTimestamp: 2018-08-08T05:07:11Z
+    generateName: hawkular-cassandra-1-
+    labels:
+      metrics-infra: hawkular-cassandra
+      name: hawkular-cassandra-1
+      type: hawkular-cassandra
+    name: hawkular-cassandra-1-qd7fk
+    namespace: openshift-infra
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicationController
+      name: hawkular-cassandra-1
+      uid: 822c9287-8687-11e8-8809-06b7f93be214
+    resourceVersion: "4276761"
+    selfLink: /api/v1/namespaces/openshift-infra/pods/hawkular-cassandra-1-qd7fk
+    uid: e812cc4d-9ac8-11e8-83e2-06b7f93be214
+  spec:
+    containers:
+    - command:
+      - /opt/apache-cassandra/bin/cassandra-docker.sh
+      - --cluster_name=hawkular-metrics
+      - --data_volume=/cassandra_data
+      - --internode_encryption=all
+      - --require_node_auth=true
+      - --enable_client_encryption=true
+      - --require_client_auth=true
+      env:
+      - name: CASSANDRA_MASTER
+        value: "true"
+      - name: CASSANDRA_DATA_VOLUME
+        value: /cassandra_data
+      - name: JVM_OPTS
+        value: -Dcassandra.commitlog.ignorereplayerrors=true
+      - name: ENABLE_PROMETHEUS_ENDPOINT
+        value: "True"
+      - name: TRUSTSTORE_NODES_AUTHORITIES
+        value: /hawkular-cassandra-certs/tls.peer.truststore.crt
+      - name: TRUSTSTORE_CLIENT_AUTHORITIES
+        value: /hawkular-cassandra-certs/tls.client.truststore.crt
+      - name: TAKE_SNAPSHOT
+        value: "False"
+      - name: POD_NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: MEMORY_LIMIT
+        valueFrom:
+          resourceFieldRef:
+            divisor: "0"
+            resource: limits.memory
+      - name: CPU_LIMIT
+        valueFrom:
+          resourceFieldRef:
+            divisor: 1m
+            resource: limits.cpu
+      image: registry.access.redhat.com/openshift3/metrics-cassandra:v3.9.31
+      imagePullPolicy: IfNotPresent
+      lifecycle:
+        postStart:
+          exec:
+            command:
+            - /opt/apache-cassandra/bin/cassandra-poststart.sh
+        preStop:
+          exec:
+            command:
+            - /opt/apache-cassandra/bin/cassandra-prestop.sh
+      name: hawkular-cassandra-1
+      ports:
+      - containerPort: 9042
+        name: cql-port
+        protocol: TCP
+      - containerPort: 9160
+        name: thift-port
+        protocol: TCP
+      - containerPort: 7000
+        name: tcp-port
+        protocol: TCP
+      - containerPort: 7001
+        name: ssl-port
+        protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+          - /opt/apache-cassandra/bin/cassandra-docker-ready.sh
+        failureThreshold: 3
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          memory: 2G
+        requests:
+          memory: 1G
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000040000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /cassandra_data
+        name: cassandra-data
+      - mountPath: /hawkular-cassandra-certs
+        name: hawkular-cassandra-certs
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: cassandra-token-n2m9x
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    imagePullSecrets:
+    - name: cassandra-dockercfg-8zf7t
+    nodeName: ip-172-16-1-89.eu-west-3.compute.internal
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000040000
+      seLinuxOptions:
+        level: s0:c6,c5
+      supplementalGroups:
+      - 65534
+    serviceAccount: cassandra
+    serviceAccountName: cassandra
+    terminationGracePeriodSeconds: 1800
+    tolerations:
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    volumes:
+    - emptyDir: {}
+      name: cassandra-data
+    - name: hawkular-cassandra-certs
+      secret:
+        defaultMode: 420
+        secretName: hawkular-cassandra-certs
+    - name: cassandra-token-n2m9x
+      secret:
+        defaultMode: 420
+        secretName: cassandra-token-n2m9x
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T05:07:11Z
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T05:07:34Z
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T05:07:11Z
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://09a6deac23481b07df26bc56fdc48c0e8206835be0ddaa100e39468367364471
+      image: registry.access.redhat.com/openshift3/metrics-cassandra:v3.9.31
+      imageID: docker-pullable://registry.access.redhat.com/openshift3/metrics-cassandra@sha256:861076b44b823ae4ce3729f9a2566dcc6eb2a47eef2d746776b2160bcbf079aa
+      lastState: {}
+      name: hawkular-cassandra-1
+      ready: true
+      restartCount: 0
+      state:
+        running:
+          startedAt: 2018-08-08T05:07:13Z
+    hostIP: 172.16.1.89
+    phase: Running
+    podIP: 10.129.1.134
+    qosClass: Burstable
+    startTime: 2018-08-08T05:07:11Z
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/scc: restricted
+    creationTimestamp: 2018-08-08T05:07:13Z
+    generateName: hawkular-metrics-
+    labels:
+      metrics-infra: hawkular-metrics
+      name: hawkular-metrics
+    name: hawkular-metrics-9hd59
+    namespace: openshift-infra
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicationController
+      name: hawkular-metrics
+      uid: 8017acbf-8687-11e8-8809-06b7f93be214
+    resourceVersion: "4276804"
+    selfLink: /api/v1/namespaces/openshift-infra/pods/hawkular-metrics-9hd59
+    uid: e92cbe0e-9ac8-11e8-83e2-06b7f93be214
+  spec:
+    containers:
+    - command:
+      - /opt/hawkular/scripts/hawkular-metrics-wrapper.sh
+      - -b
+      - 0.0.0.0
+      - -Dhawkular.metrics.cassandra.nodes=hawkular-cassandra
+      - -Dhawkular.metrics.cassandra.use-ssl
+      - -Dhawkular.metrics.openshift.auth-methods=openshift-oauth,htpasswd
+      - -Dhawkular.metrics.openshift.htpasswd-file=/hawkular-account/hawkular-metrics.htpasswd
+      - -Dhawkular.metrics.allowed-cors-access-control-allow-headers=authorization
+      - -Dhawkular.metrics.default-ttl=7
+      - -Dhawkular.metrics.admin-tenant=_hawkular_admin
+      - -Dhawkular-alerts.cassandra-nodes=hawkular-cassandra
+      - -Dhawkular-alerts.cassandra-use-ssl
+      - -Dhawkular.alerts.openshift.auth-methods=openshift-oauth,htpasswd
+      - -Dhawkular.alerts.openshift.htpasswd-file=/hawkular-account/hawkular-metrics.htpasswd
+      - -Dhawkular.alerts.allowed-cors-access-control-allow-headers=authorization
+      - -Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true
+      - -Dorg.apache.catalina.connector.CoyoteAdapter.ALLOW_BACKSLASH=true
+      - -Dcom.datastax.driver.FORCE_NIO=true
+      - -DKUBERNETES_MASTER_URL=https://kubernetes.default.svc
+      - -DUSER_WRITE_ACCESS=False
+      - -Dhawkular.metrics.jmx-reporting-enabled
+      env:
+      - name: POD_NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: MASTER_URL
+        value: https://kubernetes.default.svc
+      - name: JGROUPS_PASSWORD
+        value: 8vLLfIcDnFG8nud6b
+      - name: TRUSTSTORE_AUTHORITIES
+        value: /hawkular-metrics-certs/tls.truststore.crt
+      - name: ENABLE_PROMETHEUS_ENDPOINT
+        value: "True"
+      - name: OPENSHIFT_KUBE_PING_NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: OPENSHIFT_KUBE_PING_LABELS
+        value: metrics-infra=hawkular-metrics,name=hawkular-metrics
+      - name: STARTUP_TIMEOUT
+        value: "500"
+      image: registry.access.redhat.com/openshift3/metrics-hawkular-metrics:v3.9.31
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        exec:
+          command:
+          - /opt/hawkular/scripts/hawkular-metrics-liveness.py
+        failureThreshold: 3
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: hawkular-metrics
+      ports:
+      - containerPort: 8080
+        name: http-endpoint
+        protocol: TCP
+      - containerPort: 8443
+        name: https-endpoint
+        protocol: TCP
+      - containerPort: 8888
+        name: ping
+        protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+          - /opt/hawkular/scripts/hawkular-metrics-readiness.py
+        failureThreshold: 3
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          memory: 2500M
+        requests:
+          memory: 1500M
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000040000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /hawkular-metrics-certs
+        name: hawkular-metrics-certs
+      - mountPath: /hawkular-account
+        name: hawkular-metrics-account
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: hawkular-token-2hxx7
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    imagePullSecrets:
+    - name: hawkular-dockercfg-qjvtz
+    nodeName: ip-172-16-1-89.eu-west-3.compute.internal
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000040000
+      seLinuxOptions:
+        level: s0:c6,c5
+    serviceAccount: hawkular
+    serviceAccountName: hawkular
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    volumes:
+    - name: hawkular-metrics-certs
+      secret:
+        defaultMode: 420
+        secretName: hawkular-metrics-certs
+    - name: hawkular-metrics-account
+      secret:
+        defaultMode: 420
+        secretName: hawkular-metrics-account
+    - name: hawkular-token-2hxx7
+      secret:
+        defaultMode: 420
+        secretName: hawkular-token-2hxx7
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T05:07:13Z
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T05:07:53Z
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T05:07:13Z
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://7e9295fb01847d3c997f4ec26d62436785b61d55f65d7e56b35ef5b92086a778
+      image: registry.access.redhat.com/openshift3/metrics-hawkular-metrics:v3.9.31
+      imageID: docker-pullable://registry.access.redhat.com/openshift3/metrics-hawkular-metrics@sha256:afeb6430d942122f6e4d59b3336546d43dc01767d8229666940daa4b6b5bf4a8
+      lastState: {}
+      name: hawkular-metrics
+      ready: true
+      restartCount: 0
+      state:
+        running:
+          startedAt: 2018-08-08T05:07:15Z
+    hostIP: 172.16.1.89
+    phase: Running
+    podIP: 10.129.1.135
+    qosClass: Burstable
+    startTime: 2018-08-08T05:07:13Z
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/scc: restricted
+    creationTimestamp: 2018-08-08T05:07:14Z
+    generateName: heapster-
+    labels:
+      metrics-infra: heapster
+      name: heapster
+    name: heapster-c54z9
+    namespace: openshift-infra
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicationController
+      name: heapster
+      uid: 79c93093-8687-11e8-8809-06b7f93be214
+    resourceVersion: "4276824"
+    selfLink: /api/v1/namespaces/openshift-infra/pods/heapster-c54z9
+    uid: ea45b4ae-9ac8-11e8-83e2-06b7f93be214
+  spec:
+    containers:
+    - command:
+      - heapster-wrapper.sh
+      - --wrapper.allowed_users_file=/secrets/heapster.allowed-users
+      - --source=kubernetes.summary_api:${MASTER_URL}?useServiceAccount=true&kubeletHttps=true&kubeletPort=10250
+      - --tls_cert=/heapster-certs/tls.crt
+      - --tls_key=/heapster-certs/tls.key
+      - --tls_client_ca=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+      - --allowed_users=%allowed_users%
+      - --metric_resolution=30s
+      - --wrapper.username_file=/hawkular-account/hawkular-metrics.username
+      - --wrapper.password_file=/hawkular-account/hawkular-metrics.password
+      - --wrapper.endpoint_check=https://hawkular-metrics:443/hawkular/metrics/status
+      - --sink=hawkular:https://hawkular-metrics:443?tenant=_system&labelToTenant=pod_namespace&labelNodeId=nodename&caCert=/hawkular-metrics-certs/tls.crt&user=%username%&pass=%password%&filter=label(container_name:^system.slice.*|^user.slice)&concurrencyLimit=5
+      env:
+      - name: STARTUP_TIMEOUT
+        value: "500"
+      image: registry.access.redhat.com/openshift3/metrics-heapster:v3.9.31
+      imagePullPolicy: IfNotPresent
+      name: heapster
+      ports:
+      - containerPort: 8082
+        name: http-endpoint
+        protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+          - /opt/heapster-readiness.sh
+        failureThreshold: 3
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        limits:
+          memory: 3750M
+        requests:
+          memory: 937500k
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000040000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /secrets
+        name: heapster-secrets
+      - mountPath: /heapster-certs
+        name: heapster-certs
+      - mountPath: /hawkular-metrics-certs
+        name: hawkular-metrics-certs
+      - mountPath: /hawkular-account
+        name: hawkular-metrics-account
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: heapster-token-h24c5
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    imagePullSecrets:
+    - name: heapster-dockercfg-5jn9p
+    nodeName: ip-172-16-1-29.eu-west-3.compute.internal
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000040000
+      seLinuxOptions:
+        level: s0:c6,c5
+    serviceAccount: heapster
+    serviceAccountName: heapster
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    volumes:
+    - name: heapster-secrets
+      secret:
+        defaultMode: 420
+        secretName: heapster-secrets
+    - name: heapster-certs
+      secret:
+        defaultMode: 420
+        secretName: heapster-certs
+    - name: hawkular-metrics-certs
+      secret:
+        defaultMode: 420
+        secretName: hawkular-metrics-certs
+    - name: hawkular-metrics-account
+      secret:
+        defaultMode: 420
+        secretName: hawkular-metrics-account
+    - name: heapster-token-h24c5
+      secret:
+        defaultMode: 420
+        secretName: heapster-token-h24c5
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T05:07:14Z
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T05:08:01Z
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T05:07:14Z
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://7884475baa06645d7328e064696e3402c36a076c8a97577d99f64078d56b6553
+      image: registry.access.redhat.com/openshift3/metrics-heapster:v3.9.31
+      imageID: docker-pullable://registry.access.redhat.com/openshift3/metrics-heapster@sha256:057ef5224e632d8fcb417c144b71f3bed9676609d555f8e75843ae969e9366c1
+      lastState: {}
+      name: heapster
+      ready: true
+      restartCount: 0
+      state:
+        running:
+          startedAt: 2018-08-08T05:07:17Z
+    hostIP: 172.16.1.29
+    phase: Running
+    podIP: 10.130.0.196
+    qosClass: Burstable
+    startTime: 2018-08-08T05:07:14Z
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"ReplicationController","metadata":{"annotations":{},"creationTimestamp":"2018-07-13T10:28:39Z","generation":20,"labels":{"metrics-infra":"hawkular-cassandra","name":"hawkular-cassandra","type":"hawkular-cassandra"},"name":"hawkular-cassandra-1","namespace":"openshift-infra","selfLink":"/api/v1/namespaces/openshift-infra/replicationcontrollers/hawkular-cassandra-1","uid":"822c9287-8687-11e8-8809-06b7f93be214"},"spec":{"replicas":1,"selector":{"name":"hawkular-cassandra-1"},"template":{"metadata":{"creationTimestamp":null,"labels":{"metrics-infra":"hawkular-cassandra","name":"hawkular-cassandra-1","type":"hawkular-cassandra"}},"spec":{"containers":[{"command":["/opt/apache-cassandra/bin/cassandra-docker.sh","--cluster_name=hawkular-metrics","--data_volume=/cassandra_data","--internode_encryption=all","--require_node_auth=true","--enable_client_encryption=true","--require_client_auth=true"],"env":[{"name":"CASSANDRA_MASTER","value":"true"},{"name":"CASSANDRA_DATA_VOLUME","value":"/cassandra_data"},{"name":"JVM_OPTS","value":"-Dcassandra.commitlog.ignorereplayerrors=true"},{"name":"ENABLE_PROMETHEUS_ENDPOINT","value":"True"},{"name":"TRUSTSTORE_NODES_AUTHORITIES","value":"/hawkular-cassandra-certs/tls.peer.truststore.crt"},{"name":"TRUSTSTORE_CLIENT_AUTHORITIES","value":"/hawkular-cassandra-certs/tls.client.truststore.crt"},{"name":"TAKE_SNAPSHOT","value":"False"},{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"apiVersion":"v1","fieldPath":"metadata.namespace"}}},{"name":"MEMORY_LIMIT","valueFrom":{"resourceFieldRef":{"divisor":"0","resource":"limits.memory"}}},{"name":"CPU_LIMIT","valueFrom":{"resourceFieldRef":{"divisor":"1m","resource":"limits.cpu"}}}],"image":"registry.access.redhat.com/openshift3/metrics-cassandra:v3.9.31","imagePullPolicy":"IfNotPresent","lifecycle":{"postStart":{"exec":{"command":["/opt/apache-cassandra/bin/cassandra-poststart.sh"]}},"preStop":{"exec":{"command":["/opt/apache-cassandra/bin/cassandra-prestop.sh"]}}},"name":"hawkular-cassandra-1","ports":[{"containerPort":9042,"name":"cql-port","protocol":"TCP"},{"containerPort":9160,"name":"thift-port","protocol":"TCP"},{"containerPort":7000,"name":"tcp-port","protocol":"TCP"},{"containerPort":7001,"name":"ssl-port","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["/opt/apache-cassandra/bin/cassandra-docker-ready.sh"]},"failureThreshold":3,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"resources":{"limits":{"memory":"2G"},"requests":{"memory":"1G"}},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","volumeMounts":[{"mountPath":"/cassandra_data","name":"cassandra-data"},{"mountPath":"/hawkular-cassandra-certs","name":"hawkular-cassandra-certs"}]}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{"supplementalGroups":[65534]},"serviceAccount":"cassandra","serviceAccountName":"cassandra","terminationGracePeriodSeconds":1800,"volumes":[{"emptyDir":{},"name":"cassandra-data"},{"name":"hawkular-cassandra-certs","secret":{"defaultMode":420,"secretName":"hawkular-cassandra-certs"}}]}}},"status":{"observedGeneration":20,"replicas":0}}
+    creationTimestamp: 2018-07-13T10:28:39Z
+    generation: 21
+    labels:
+      metrics-infra: hawkular-cassandra
+      name: hawkular-cassandra
+      type: hawkular-cassandra
+    name: hawkular-cassandra-1
+    namespace: openshift-infra
+    resourceVersion: "4276762"
+    selfLink: /api/v1/namespaces/openshift-infra/replicationcontrollers/hawkular-cassandra-1
+    uid: 822c9287-8687-11e8-8809-06b7f93be214
+  spec:
+    replicas: 1
+    selector:
+      name: hawkular-cassandra-1
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          metrics-infra: hawkular-cassandra
+          name: hawkular-cassandra-1
+          type: hawkular-cassandra
+      spec:
+        containers:
+        - command:
+          - /opt/apache-cassandra/bin/cassandra-docker.sh
+          - --cluster_name=hawkular-metrics
+          - --data_volume=/cassandra_data
+          - --internode_encryption=all
+          - --require_node_auth=true
+          - --enable_client_encryption=true
+          - --require_client_auth=true
+          env:
+          - name: CASSANDRA_MASTER
+            value: "true"
+          - name: CASSANDRA_DATA_VOLUME
+            value: /cassandra_data
+          - name: JVM_OPTS
+            value: -Dcassandra.commitlog.ignorereplayerrors=true
+          - name: ENABLE_PROMETHEUS_ENDPOINT
+            value: "True"
+          - name: TRUSTSTORE_NODES_AUTHORITIES
+            value: /hawkular-cassandra-certs/tls.peer.truststore.crt
+          - name: TRUSTSTORE_CLIENT_AUTHORITIES
+            value: /hawkular-cassandra-certs/tls.client.truststore.crt
+          - name: TAKE_SNAPSHOT
+            value: "False"
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+          - name: MEMORY_LIMIT
+            valueFrom:
+              resourceFieldRef:
+                divisor: "0"
+                resource: limits.memory
+          - name: CPU_LIMIT
+            valueFrom:
+              resourceFieldRef:
+                divisor: 1m
+                resource: limits.cpu
+          image: registry.access.redhat.com/openshift3/metrics-cassandra:v3.9.31
+          imagePullPolicy: IfNotPresent
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                - /opt/apache-cassandra/bin/cassandra-poststart.sh
+            preStop:
+              exec:
+                command:
+                - /opt/apache-cassandra/bin/cassandra-prestop.sh
+          name: hawkular-cassandra-1
+          ports:
+          - containerPort: 9042
+            name: cql-port
+            protocol: TCP
+          - containerPort: 9160
+            name: thift-port
+            protocol: TCP
+          - containerPort: 7000
+            name: tcp-port
+            protocol: TCP
+          - containerPort: 7001
+            name: ssl-port
+            protocol: TCP
+          readinessProbe:
+            exec:
+              command:
+              - /opt/apache-cassandra/bin/cassandra-docker-ready.sh
+            failureThreshold: 3
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              memory: 2G
+            requests:
+              memory: 1G
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /cassandra_data
+            name: cassandra-data
+          - mountPath: /hawkular-cassandra-certs
+            name: hawkular-cassandra-certs
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext:
+          supplementalGroups:
+          - 65534
+        serviceAccount: cassandra
+        serviceAccountName: cassandra
+        terminationGracePeriodSeconds: 1800
+        volumes:
+        - emptyDir: {}
+          name: cassandra-data
+        - name: hawkular-cassandra-certs
+          secret:
+            defaultMode: 420
+            secretName: hawkular-cassandra-certs
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 21
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"ReplicationController","metadata":{"annotations":{},"creationTimestamp":"2018-07-13T10:28:36Z","generation":32,"labels":{"metrics-infra":"hawkular-metrics","name":"hawkular-metrics"},"name":"hawkular-metrics","namespace":"openshift-infra","selfLink":"/api/v1/namespaces/openshift-infra/replicationcontrollers/hawkular-metrics","uid":"8017acbf-8687-11e8-8809-06b7f93be214"},"spec":{"replicas":1,"selector":{"name":"hawkular-metrics"},"template":{"metadata":{"creationTimestamp":null,"labels":{"metrics-infra":"hawkular-metrics","name":"hawkular-metrics"}},"spec":{"containers":[{"command":["/opt/hawkular/scripts/hawkular-metrics-wrapper.sh","-b","0.0.0.0","-Dhawkular.metrics.cassandra.nodes=hawkular-cassandra","-Dhawkular.metrics.cassandra.use-ssl","-Dhawkular.metrics.openshift.auth-methods=openshift-oauth,htpasswd","-Dhawkular.metrics.openshift.htpasswd-file=/hawkular-account/hawkular-metrics.htpasswd","-Dhawkular.metrics.allowed-cors-access-control-allow-headers=authorization","-Dhawkular.metrics.default-ttl=7","-Dhawkular.metrics.admin-tenant=_hawkular_admin","-Dhawkular-alerts.cassandra-nodes=hawkular-cassandra","-Dhawkular-alerts.cassandra-use-ssl","-Dhawkular.alerts.openshift.auth-methods=openshift-oauth,htpasswd","-Dhawkular.alerts.openshift.htpasswd-file=/hawkular-account/hawkular-metrics.htpasswd","-Dhawkular.alerts.allowed-cors-access-control-allow-headers=authorization","-Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true","-Dorg.apache.catalina.connector.CoyoteAdapter.ALLOW_BACKSLASH=true","-Dcom.datastax.driver.FORCE_NIO=true","-DKUBERNETES_MASTER_URL=https://kubernetes.default.svc","-DUSER_WRITE_ACCESS=False","-Dhawkular.metrics.jmx-reporting-enabled"],"env":[{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"apiVersion":"v1","fieldPath":"metadata.namespace"}}},{"name":"MASTER_URL","value":"https://kubernetes.default.svc"},{"name":"JGROUPS_PASSWORD","value":"8vLLfIcDnFG8nud6b"},{"name":"TRUSTSTORE_AUTHORITIES","value":"/hawkular-metrics-certs/tls.truststore.crt"},{"name":"ENABLE_PROMETHEUS_ENDPOINT","value":"True"},{"name":"OPENSHIFT_KUBE_PING_NAMESPACE","valueFrom":{"fieldRef":{"apiVersion":"v1","fieldPath":"metadata.namespace"}}},{"name":"OPENSHIFT_KUBE_PING_LABELS","value":"metrics-infra=hawkular-metrics,name=hawkular-metrics"},{"name":"STARTUP_TIMEOUT","value":"500"}],"image":"registry.access.redhat.com/openshift3/metrics-hawkular-metrics:v3.9.31","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["/opt/hawkular/scripts/hawkular-metrics-liveness.py"]},"failureThreshold":3,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"name":"hawkular-metrics","ports":[{"containerPort":8080,"name":"http-endpoint","protocol":"TCP"},{"containerPort":8443,"name":"https-endpoint","protocol":"TCP"},{"containerPort":8888,"name":"ping","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["/opt/hawkular/scripts/hawkular-metrics-readiness.py"]},"failureThreshold":3,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"resources":{"limits":{"memory":"2500M"},"requests":{"memory":"1500M"}},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","volumeMounts":[{"mountPath":"/hawkular-metrics-certs","name":"hawkular-metrics-certs"},{"mountPath":"/hawkular-account","name":"hawkular-metrics-account"}]}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"serviceAccount":"hawkular","serviceAccountName":"hawkular","terminationGracePeriodSeconds":30,"volumes":[{"name":"hawkular-metrics-certs","secret":{"defaultMode":420,"secretName":"hawkular-metrics-certs"}},{"name":"hawkular-metrics-account","secret":{"defaultMode":420,"secretName":"hawkular-metrics-account"}}]}}},"status":{"observedGeneration":32,"replicas":0}}
+    creationTimestamp: 2018-07-13T10:28:36Z
+    generation: 33
+    labels:
+      metrics-infra: hawkular-metrics
+      name: hawkular-metrics
+    name: hawkular-metrics
+    namespace: openshift-infra
+    resourceVersion: "4276806"
+    selfLink: /api/v1/namespaces/openshift-infra/replicationcontrollers/hawkular-metrics
+    uid: 8017acbf-8687-11e8-8809-06b7f93be214
+  spec:
+    replicas: 1
+    selector:
+      name: hawkular-metrics
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          metrics-infra: hawkular-metrics
+          name: hawkular-metrics
+      spec:
+        containers:
+        - command:
+          - /opt/hawkular/scripts/hawkular-metrics-wrapper.sh
+          - -b
+          - 0.0.0.0
+          - -Dhawkular.metrics.cassandra.nodes=hawkular-cassandra
+          - -Dhawkular.metrics.cassandra.use-ssl
+          - -Dhawkular.metrics.openshift.auth-methods=openshift-oauth,htpasswd
+          - -Dhawkular.metrics.openshift.htpasswd-file=/hawkular-account/hawkular-metrics.htpasswd
+          - -Dhawkular.metrics.allowed-cors-access-control-allow-headers=authorization
+          - -Dhawkular.metrics.default-ttl=7
+          - -Dhawkular.metrics.admin-tenant=_hawkular_admin
+          - -Dhawkular-alerts.cassandra-nodes=hawkular-cassandra
+          - -Dhawkular-alerts.cassandra-use-ssl
+          - -Dhawkular.alerts.openshift.auth-methods=openshift-oauth,htpasswd
+          - -Dhawkular.alerts.openshift.htpasswd-file=/hawkular-account/hawkular-metrics.htpasswd
+          - -Dhawkular.alerts.allowed-cors-access-control-allow-headers=authorization
+          - -Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true
+          - -Dorg.apache.catalina.connector.CoyoteAdapter.ALLOW_BACKSLASH=true
+          - -Dcom.datastax.driver.FORCE_NIO=true
+          - -DKUBERNETES_MASTER_URL=https://kubernetes.default.svc
+          - -DUSER_WRITE_ACCESS=False
+          - -Dhawkular.metrics.jmx-reporting-enabled
+          env:
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+          - name: MASTER_URL
+            value: https://kubernetes.default.svc
+          - name: JGROUPS_PASSWORD
+            value: 8vLLfIcDnFG8nud6b
+          - name: TRUSTSTORE_AUTHORITIES
+            value: /hawkular-metrics-certs/tls.truststore.crt
+          - name: ENABLE_PROMETHEUS_ENDPOINT
+            value: "True"
+          - name: OPENSHIFT_KUBE_PING_NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+          - name: OPENSHIFT_KUBE_PING_LABELS
+            value: metrics-infra=hawkular-metrics,name=hawkular-metrics
+          - name: STARTUP_TIMEOUT
+            value: "500"
+          image: registry.access.redhat.com/openshift3/metrics-hawkular-metrics:v3.9.31
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            exec:
+              command:
+              - /opt/hawkular/scripts/hawkular-metrics-liveness.py
+            failureThreshold: 3
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          name: hawkular-metrics
+          ports:
+          - containerPort: 8080
+            name: http-endpoint
+            protocol: TCP
+          - containerPort: 8443
+            name: https-endpoint
+            protocol: TCP
+          - containerPort: 8888
+            name: ping
+            protocol: TCP
+          readinessProbe:
+            exec:
+              command:
+              - /opt/hawkular/scripts/hawkular-metrics-readiness.py
+            failureThreshold: 3
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              memory: 2500M
+            requests:
+              memory: 1500M
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /hawkular-metrics-certs
+            name: hawkular-metrics-certs
+          - mountPath: /hawkular-account
+            name: hawkular-metrics-account
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: hawkular
+        serviceAccountName: hawkular
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - name: hawkular-metrics-certs
+          secret:
+            defaultMode: 420
+            secretName: hawkular-metrics-certs
+        - name: hawkular-metrics-account
+          secret:
+            defaultMode: 420
+            secretName: hawkular-metrics-account
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 33
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"ReplicationController","metadata":{"annotations":{},"creationTimestamp":"2018-07-13T10:28:25Z","generation":20,"labels":{"metrics-infra":"heapster","name":"heapster"},"name":"heapster","namespace":"openshift-infra","selfLink":"/api/v1/namespaces/openshift-infra/replicationcontrollers/heapster","uid":"79c93093-8687-11e8-8809-06b7f93be214"},"spec":{"replicas":1,"selector":{"name":"heapster"},"template":{"metadata":{"creationTimestamp":null,"labels":{"metrics-infra":"heapster","name":"heapster"},"name":"heapster"},"spec":{"containers":[{"command":["heapster-wrapper.sh","--wrapper.allowed_users_file=/secrets/heapster.allowed-users","--source=kubernetes.summary_api:${MASTER_URL}?useServiceAccount=true\u0026kubeletHttps=true\u0026kubeletPort=10250","--tls_cert=/heapster-certs/tls.crt","--tls_key=/heapster-certs/tls.key","--tls_client_ca=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt","--allowed_users=%allowed_users%","--metric_resolution=30s","--wrapper.username_file=/hawkular-account/hawkular-metrics.username","--wrapper.password_file=/hawkular-account/hawkular-metrics.password","--wrapper.endpoint_check=https://hawkular-metrics:443/hawkular/metrics/status","--sink=hawkular:https://hawkular-metrics:443?tenant=_system\u0026labelToTenant=pod_namespace\u0026labelNodeId=nodename\u0026caCert=/hawkular-metrics-certs/tls.crt\u0026user=%username%\u0026pass=%password%\u0026filter=label(container_name:^system.slice.*|^user.slice)\u0026concurrencyLimit=5"],"env":[{"name":"STARTUP_TIMEOUT","value":"500"}],"image":"registry.access.redhat.com/openshift3/metrics-heapster:v3.9.31","imagePullPolicy":"IfNotPresent","name":"heapster","ports":[{"containerPort":8082,"name":"http-endpoint","protocol":"TCP"}],"readinessProbe":{"exec":{"command":["/opt/heapster-readiness.sh"]},"failureThreshold":3,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"resources":{"limits":{"memory":"3750M"},"requests":{"memory":"937500k"}},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","volumeMounts":[{"mountPath":"/secrets","name":"heapster-secrets"},{"mountPath":"/heapster-certs","name":"heapster-certs"},{"mountPath":"/hawkular-metrics-certs","name":"hawkular-metrics-certs"},{"mountPath":"/hawkular-account","name":"hawkular-metrics-account"}]}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"serviceAccount":"heapster","serviceAccountName":"heapster","terminationGracePeriodSeconds":30,"volumes":[{"name":"heapster-secrets","secret":{"defaultMode":420,"secretName":"heapster-secrets"}},{"name":"heapster-certs","secret":{"defaultMode":420,"secretName":"heapster-certs"}},{"name":"hawkular-metrics-certs","secret":{"defaultMode":420,"secretName":"hawkular-metrics-certs"}},{"name":"hawkular-metrics-account","secret":{"defaultMode":420,"secretName":"hawkular-metrics-account"}}]}}},"status":{"observedGeneration":20,"replicas":0}}
+    creationTimestamp: 2018-07-13T10:28:25Z
+    generation: 21
+    labels:
+      metrics-infra: heapster
+      name: heapster
+    name: heapster
+    namespace: openshift-infra
+    resourceVersion: "4276826"
+    selfLink: /api/v1/namespaces/openshift-infra/replicationcontrollers/heapster
+    uid: 79c93093-8687-11e8-8809-06b7f93be214
+  spec:
+    replicas: 1
+    selector:
+      name: heapster
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          metrics-infra: heapster
+          name: heapster
+        name: heapster
+      spec:
+        containers:
+        - command:
+          - heapster-wrapper.sh
+          - --wrapper.allowed_users_file=/secrets/heapster.allowed-users
+          - --source=kubernetes.summary_api:${MASTER_URL}?useServiceAccount=true&kubeletHttps=true&kubeletPort=10250
+          - --tls_cert=/heapster-certs/tls.crt
+          - --tls_key=/heapster-certs/tls.key
+          - --tls_client_ca=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+          - --allowed_users=%allowed_users%
+          - --metric_resolution=30s
+          - --wrapper.username_file=/hawkular-account/hawkular-metrics.username
+          - --wrapper.password_file=/hawkular-account/hawkular-metrics.password
+          - --wrapper.endpoint_check=https://hawkular-metrics:443/hawkular/metrics/status
+          - --sink=hawkular:https://hawkular-metrics:443?tenant=_system&labelToTenant=pod_namespace&labelNodeId=nodename&caCert=/hawkular-metrics-certs/tls.crt&user=%username%&pass=%password%&filter=label(container_name:^system.slice.*|^user.slice)&concurrencyLimit=5
+          env:
+          - name: STARTUP_TIMEOUT
+            value: "500"
+          image: registry.access.redhat.com/openshift3/metrics-heapster:v3.9.31
+          imagePullPolicy: IfNotPresent
+          name: heapster
+          ports:
+          - containerPort: 8082
+            name: http-endpoint
+            protocol: TCP
+          readinessProbe:
+            exec:
+              command:
+              - /opt/heapster-readiness.sh
+            failureThreshold: 3
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              memory: 3750M
+            requests:
+              memory: 937500k
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /secrets
+            name: heapster-secrets
+          - mountPath: /heapster-certs
+            name: heapster-certs
+          - mountPath: /hawkular-metrics-certs
+            name: hawkular-metrics-certs
+          - mountPath: /hawkular-account
+            name: hawkular-metrics-account
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: heapster
+        serviceAccountName: heapster
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - name: heapster-secrets
+          secret:
+            defaultMode: 420
+            secretName: heapster-secrets
+        - name: heapster-certs
+          secret:
+            defaultMode: 420
+            secretName: heapster-certs
+        - name: hawkular-metrics-certs
+          secret:
+            defaultMode: 420
+            secretName: hawkular-metrics-certs
+        - name: hawkular-metrics-account
+          secret:
+            defaultMode: 420
+            secretName: hawkular-metrics-account
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 21
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"metrics-infra":"hawkular-cassandra","name":"hawkular-cassandra"},"name":"hawkular-cassandra","namespace":"openshift-infra"},"spec":{"ports":[{"name":"cql-port","port":9042,"targetPort":"cql-port"},{"name":"thrift-port","port":9160,"targetPort":"thrift-port"},{"name":"tcp-port","port":7000,"targetPort":"tcp-port"},{"name":"ssl-port","port":7001,"targetPort":"ssl-port"}],"selector":{"type":"hawkular-cassandra"}}}
+    creationTimestamp: 2018-07-13T10:28:18Z
+    labels:
+      metrics-infra: hawkular-cassandra
+      name: hawkular-cassandra
+    name: hawkular-cassandra
+    namespace: openshift-infra
+    resourceVersion: "4830"
+    selfLink: /api/v1/namespaces/openshift-infra/services/hawkular-cassandra
+    uid: 75b20948-8687-11e8-8809-06b7f93be214
+  spec:
+    clusterIP: 172.30.177.130
+    ports:
+    - name: cql-port
+      port: 9042
+      protocol: TCP
+      targetPort: cql-port
+    - name: thrift-port
+      port: 9160
+      protocol: TCP
+      targetPort: thrift-port
+    - name: tcp-port
+      port: 7000
+      protocol: TCP
+      targetPort: tcp-port
+    - name: ssl-port
+      port: 7001
+      protocol: TCP
+      targetPort: ssl-port
+    selector:
+      type: hawkular-cassandra
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"metrics-infra":"hawkular-cassandra","name":"hawkular-cassandra"},"name":"hawkular-cassandra-nodes","namespace":"openshift-infra"},"spec":{"clusterIP":"None","portalIP":"None","ports":[{"name":"cql-port","port":9042,"targetPort":"cql-port"},{"name":"thrift-port","port":9160,"targetPort":"thrift-port"},{"name":"tcp-port","port":7000,"targetPort":"tcp-port"},{"name":"ssl-port","port":7001,"targetPort":"ssl-port"}],"selector":{"type":"hawkular-cassandra"}}}
+    creationTimestamp: 2018-07-13T10:28:20Z
+    labels:
+      metrics-infra: hawkular-cassandra
+      name: hawkular-cassandra
+    name: hawkular-cassandra-nodes
+    namespace: openshift-infra
+    resourceVersion: "4834"
+    selfLink: /api/v1/namespaces/openshift-infra/services/hawkular-cassandra-nodes
+    uid: 76b8a811-8687-11e8-8809-06b7f93be214
+  spec:
+    clusterIP: None
+    ports:
+    - name: cql-port
+      port: 9042
+      protocol: TCP
+      targetPort: cql-port
+    - name: thrift-port
+      port: 9160
+      protocol: TCP
+      targetPort: thrift-port
+    - name: tcp-port
+      port: 7000
+      protocol: TCP
+      targetPort: tcp-port
+    - name: ssl-port
+      port: 7001
+      protocol: TCP
+      targetPort: ssl-port
+    selector:
+      type: hawkular-cassandra
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"metrics-infra":"hawkular-metrics","name":"hawkular-metrics"},"name":"hawkular-metrics","namespace":"openshift-infra"},"spec":{"ports":[{"port":443,"targetPort":"https-endpoint"}],"selector":{"name":"hawkular-metrics"}}}
+    creationTimestamp: 2018-07-13T10:28:17Z
+    labels:
+      metrics-infra: hawkular-metrics
+      name: hawkular-metrics
+    name: hawkular-metrics
+    namespace: openshift-infra
+    resourceVersion: "4819"
+    selfLink: /api/v1/namespaces/openshift-infra/services/hawkular-metrics
+    uid: 74ad2f28-8687-11e8-8809-06b7f93be214
+  spec:
+    clusterIP: 172.30.237.56
+    ports:
+    - port: 443
+      protocol: TCP
+      targetPort: https-endpoint
+    selector:
+      name: hawkular-metrics
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"service.alpha.openshift.io/serving-cert-secret-name":"heapster-certs"},"labels":{"metrics-infra":"heapster","name":"heapster"},"name":"heapster","namespace":"openshift-infra"},"spec":{"ports":[{"port":80,"targetPort":"http-endpoint"}],"selector":{"name":"heapster"}}}
+      service.alpha.openshift.io/serving-cert-secret-name: heapster-certs
+      service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1531475834
+    creationTimestamp: 2018-07-13T10:28:30Z
+    labels:
+      metrics-infra: heapster
+      name: heapster
+    name: heapster
+    namespace: openshift-infra
+    resourceVersion: "4898"
+    selfLink: /api/v1/namespaces/openshift-infra/services/heapster
+    uid: 7c704df8-8687-11e8-8809-06b7f93be214
+  spec:
+    clusterIP: 172.30.153.206
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: http-endpoint
+    selector:
+      name: heapster
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

@@ -1,0 +1,15 @@
+NAME                      HOST/PORT                              PATH      SERVICES           PORT      TERMINATION   WILDCARD
+routes/hawkular-metrics   hawkular-metrics.apps004.amosdemo.io             hawkular-metrics   <all>     reencrypt     None
+NAME                            READY     STATUS    RESTARTS   AGE
+po/hawkular-cassandra-1-qd7fk   1/1       Running   0          2h
+po/hawkular-metrics-9hd59       1/1       Running   0          2h
+po/heapster-c54z9               1/1       Running   0          2h
+NAME                      DESIRED   CURRENT   READY     AGE
+rc/hawkular-cassandra-1   1         1         1         25d
+rc/hawkular-metrics       1         1         1         25d
+rc/heapster               1         1         1         25d
+NAME                           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                               AGE
+svc/hawkular-cassandra         ClusterIP   172.30.177.130   <none>        9042/TCP,9160/TCP,7000/TCP,7001/TCP   25d
+svc/hawkular-cassandra-nodes   ClusterIP   None             <none>        9042/TCP,9160/TCP,7000/TCP,7001/TCP   25d
+svc/hawkular-metrics           ClusterIP   172.30.237.56    <none>        443/TCP                               25d
+svc/heapster                   ClusterIP   172.30.153.206   <none>        80/TCP                                25d
