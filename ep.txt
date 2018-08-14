@@ -1,0 +1,5 @@
+NAME                       ENDPOINTS                                            AGE
+hawkular-cassandra         10.129.0.64:7001,10.129.0.64:9042,10.129.0.64:7000   5h
+hawkular-cassandra-nodes   10.129.0.64:7001,10.129.0.64:9042,10.129.0.64:7000   5h
+hawkular-metrics                                                                5h
+heapster                                                                        5h
