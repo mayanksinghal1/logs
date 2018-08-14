@@ -1,0 +1,1504 @@
+apiVersion: v1
+items:
+- apiVersion: apps.openshift.io/v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: 2018-08-08T12:57:05Z
+    generation: 2
+    labels:
+      app: cakephp-ex
+    name: cakephp-ex
+    namespace: liber-poc-1
+    resourceVersion: "52648"
+    selfLink: /apis/apps.openshift.io/v1/namespaces/liber-poc-1/deploymentconfigs/cakephp-ex
+    uid: 8d376a98-9b0a-11e8-a81e-028289a47334
+  spec:
+    replicas: 1
+    selector:
+      deploymentconfig: cakephp-ex
+    strategy:
+      activeDeadlineSeconds: 21600
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: cakephp-ex
+          deploymentconfig: cakephp-ex
+      spec:
+        containers:
+        - image: docker-registry.default.svc:5000/liber-poc-1/cakephp-ex@sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d
+          imagePullPolicy: Always
+          name: cakephp-ex
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          - containerPort: 8443
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+    test: false
+    triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - cakephp-ex
+        from:
+          kind: ImageStreamTag
+          name: cakephp-ex:latest
+          namespace: liber-poc-1
+        lastTriggeredImage: docker-registry.default.svc:5000/liber-poc-1/cakephp-ex@sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d
+      type: ImageChange
+    - type: ConfigChange
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: 2018-08-08T12:59:03Z
+      lastUpdateTime: 2018-08-08T12:59:03Z
+      message: Deployment config has minimum availability.
+      status: "True"
+      type: Available
+    - lastTransitionTime: 2018-08-08T12:59:05Z
+      lastUpdateTime: 2018-08-08T12:59:05Z
+      message: replication controller "cakephp-ex-1" successfully rolled out
+      reason: NewReplicationControllerAvailable
+      status: "True"
+      type: Progressing
+    details:
+      causes:
+      - type: ConfigChange
+      message: config change
+    latestVersion: 1
+    observedGeneration: 2
+    readyReplicas: 1
+    replicas: 1
+    unavailableReplicas: 0
+    updatedReplicas: 1
+- apiVersion: apps.openshift.io/v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: 2018-08-08T12:46:56Z
+    generation: 2
+    labels:
+      app: liberpoc
+    name: liberpoc
+    namespace: liber-poc-1
+    resourceVersion: "1037175"
+    selfLink: /apis/apps.openshift.io/v1/namespaces/liber-poc-1/deploymentconfigs/liberpoc
+    uid: 2226d6db-9b09-11e8-a81e-028289a47334
+  spec:
+    replicas: 1
+    selector:
+      app: liberpoc
+      deploymentconfig: liberpoc
+    strategy:
+      activeDeadlineSeconds: 21600
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        annotations:
+          openshift.io/generated-by: OpenShiftWebConsole
+        creationTimestamp: null
+        labels:
+          app: liberpoc
+          deploymentconfig: liberpoc
+      spec:
+        containers:
+        - image: chetanpatil17/liberpoc@sha256:8b3459d341914eea62be34fcbcdc771f42ad1831b86dbd7a7d75706e3703fda7
+          imagePullPolicy: IfNotPresent
+          name: liberpoc
+          ports:
+          - containerPort: 22
+            protocol: TCP
+          - containerPort: 3171
+            protocol: TCP
+          - containerPort: 3371
+            protocol: TCP
+          - containerPort: 5432
+            protocol: TCP
+          - containerPort: 9080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+    test: false
+    triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - liberpoc
+        from:
+          kind: ImageStreamTag
+          name: liberpoc:firsttry
+          namespace: liber-poc-1
+        lastTriggeredImage: chetanpatil17/liberpoc@sha256:8b3459d341914eea62be34fcbcdc771f42ad1831b86dbd7a7d75706e3703fda7
+      type: ImageChange
+  status:
+    availableReplicas: 0
+    conditions:
+    - lastTransitionTime: 2018-08-08T12:46:59Z
+      lastUpdateTime: 2018-08-08T12:52:31Z
+      message: replication controller "liberpoc-1" successfully rolled out
+      reason: NewReplicationControllerAvailable
+      status: "True"
+      type: Progressing
+    - lastTransitionTime: 2018-08-14T12:12:55Z
+      lastUpdateTime: 2018-08-14T12:12:55Z
+      message: Deployment config does not have minimum availability.
+      status: "False"
+      type: Available
+    details:
+      causes:
+      - type: ConfigChange
+      message: config change
+    latestVersion: 1
+    observedGeneration: 2
+    replicas: 1
+    unavailableReplicas: 1
+    updatedReplicas: 1
+- apiVersion: apps.openshift.io/v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      template.alpha.openshift.io/wait-for-ready: "true"
+    creationTimestamp: 2018-08-08T12:50:58Z
+    generation: 2
+    labels:
+      app: mysql-persistent
+      template: mysql-persistent-template
+    name: mysql
+    namespace: liber-poc-1
+    resourceVersion: "52893"
+    selfLink: /apis/apps.openshift.io/v1/namespaces/liber-poc-1/deploymentconfigs/mysql
+    uid: b27f4238-9b09-11e8-a81e-028289a47334
+  spec:
+    replicas: 1
+    selector:
+      name: mysql
+    strategy:
+      activeDeadlineSeconds: 21600
+      recreateParams:
+        timeoutSeconds: 600
+      resources: {}
+      type: Recreate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          name: mysql
+      spec:
+        containers:
+        - env:
+          - name: MYSQL_USER
+            valueFrom:
+              secretKeyRef:
+                key: database-user
+                name: mysql
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: database-password
+                name: mysql
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: database-root-password
+                name: mysql
+          - name: MYSQL_DATABASE
+            valueFrom:
+              secretKeyRef:
+                key: database-name
+                name: mysql
+          image: registry.access.redhat.com/rhscl/mysql-57-rhel7@sha256:154cd19e9c2a9df09ad61ce61139b955499aecd2247eb32df299104c750c6feb
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            tcpSocket:
+              port: 3306
+            timeoutSeconds: 1
+          name: mysql
+          ports:
+          - containerPort: 3306
+            protocol: TCP
+          readinessProbe:
+            exec:
+              command:
+              - /bin/sh
+              - -i
+              - -c
+              - MYSQL_PWD="$MYSQL_PASSWORD" mysql -h 127.0.0.1 -u $MYSQL_USER -D $MYSQL_DATABASE
+                -e 'SELECT 1'
+            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              memory: 512Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /var/lib/mysql/data
+            name: mysql-data
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - name: mysql-data
+          persistentVolumeClaim:
+            claimName: mysql
+    test: false
+    triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - mysql
+        from:
+          kind: ImageStreamTag
+          name: mysql:5.7
+          namespace: openshift
+        lastTriggeredImage: registry.access.redhat.com/rhscl/mysql-57-rhel7@sha256:154cd19e9c2a9df09ad61ce61139b955499aecd2247eb32df299104c750c6feb
+      type: ImageChange
+    - type: ConfigChange
+  status:
+    availableReplicas: 0
+    conditions:
+    - lastTransitionTime: 2018-08-08T12:50:58Z
+      lastUpdateTime: 2018-08-08T12:50:58Z
+      message: Deployment config does not have minimum availability.
+      status: "False"
+      type: Available
+    - lastTransitionTime: 2018-08-08T13:01:02Z
+      lastUpdateTime: 2018-08-08T13:01:02Z
+      message: replication controller "mysql-1" has failed progressing
+      reason: ProgressDeadlineExceeded
+      status: "False"
+      type: Progressing
+    details:
+      causes:
+      - type: ConfigChange
+      message: config change
+    latestVersion: 1
+    observedGeneration: 2
+    replicas: 0
+    unavailableReplicas: 0
+    updatedReplicas: 0
+- apiVersion: build.openshift.io/v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: 2018-08-08T12:57:05Z
+    labels:
+      app: cakephp-ex
+    name: cakephp-ex
+    namespace: liber-poc-1
+    resourceVersion: "52346"
+    selfLink: /apis/build.openshift.io/v1/namespaces/liber-poc-1/buildconfigs/cakephp-ex
+    uid: 8d37a9e3-9b0a-11e8-a81e-028289a47334
+  spec:
+    nodeSelector: null
+    output:
+      to:
+        kind: ImageStreamTag
+        name: cakephp-ex:latest
+    postCommit: {}
+    resources: {}
+    runPolicy: Serial
+    source:
+      git:
+        ref: master
+        uri: https://github.com/openshift/cakephp-ex.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: ImageStreamTag
+          name: php:7.1
+          namespace: openshift
+      type: Source
+    triggers:
+    - imageChange:
+        lastTriggeredImageID: registry.access.redhat.com/rhscl/php-71-rhel7@sha256:c20188e7775607c5bbb9b526a041a526c5dc0be749d2a071f73e7d81c0066bdf
+      type: ImageChange
+    - type: ConfigChange
+    - generic:
+        secret: d85a2a9c53644a86
+      type: Generic
+    - github:
+        secret: 9d5e0b2be232cc06
+      type: GitHub
+  status:
+    lastVersion: 1
+- apiVersion: build.openshift.io/v1
+  kind: Build
+  metadata:
+    annotations:
+      openshift.io/build-config.name: cakephp-ex
+      openshift.io/build.number: "1"
+      openshift.io/build.pod-name: cakephp-ex-1-build
+    creationTimestamp: 2018-08-08T12:57:05Z
+    labels:
+      app: cakephp-ex
+      buildconfig: cakephp-ex
+      openshift.io/build-config.name: cakephp-ex
+      openshift.io/build.start-policy: Serial
+    name: cakephp-ex-1
+    namespace: liber-poc-1
+    ownerReferences:
+    - apiVersion: build.openshift.io/v1
+      controller: true
+      kind: BuildConfig
+      name: cakephp-ex
+      uid: 8d37a9e3-9b0a-11e8-a81e-028289a47334
+    resourceVersion: "52605"
+    selfLink: /apis/build.openshift.io/v1/namespaces/liber-poc-1/builds/cakephp-ex-1
+    uid: 8d3d0a83-9b0a-11e8-a81e-028289a47334
+  spec:
+    nodeSelector: null
+    output:
+      pushSecret:
+        name: builder-dockercfg-8jc2g
+      to:
+        kind: ImageStreamTag
+        name: cakephp-ex:latest
+    postCommit: {}
+    resources: {}
+    revision:
+      git:
+        author:
+          email: hhorak@redhat.com
+          name: Honza Horak
+        commit: 893c2a2e40f449c76bddd0a607d36e3bf0e626ee
+        committer:
+          email: noreply@github.com
+          name: GitHub
+        message: 'Merge pull request #102 from adambkaplan/sclorg-rename'
+      type: Git
+    serviceAccount: builder
+    source:
+      git:
+        ref: master
+        uri: https://github.com/openshift/cakephp-ex.git
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: DockerImage
+          name: registry.access.redhat.com/rhscl/php-71-rhel7@sha256:c20188e7775607c5bbb9b526a041a526c5dc0be749d2a071f73e7d81c0066bdf
+      type: Source
+    triggeredBy:
+    - message: Build configuration change
+  status:
+    completionTimestamp: 2018-08-08T12:58:57Z
+    config:
+      kind: BuildConfig
+      name: cakephp-ex
+      namespace: liber-poc-1
+    duration: 112000000000
+    output:
+      to:
+        imageDigest: sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d
+    outputDockerImageReference: docker-registry.default.svc:5000/liber-poc-1/cakephp-ex:latest
+    phase: Complete
+    stages:
+    - durationMilliseconds: 2200
+      name: FetchInputs
+      startTime: 2018-08-08T12:57:10Z
+      steps:
+      - durationMilliseconds: 2200
+        name: FetchGitSource
+        startTime: 2018-08-08T12:57:10Z
+    - durationMilliseconds: 1264
+      name: CommitContainer
+      startTime: 2018-08-08T12:58:31Z
+      steps:
+      - durationMilliseconds: 1264
+        name: CommitContainer
+        startTime: 2018-08-08T12:58:31Z
+    - durationMilliseconds: 77757
+      name: Assemble
+      startTime: 2018-08-08T12:57:15Z
+      steps:
+      - durationMilliseconds: 77757
+        name: AssembleBuildScripts
+        startTime: 2018-08-08T12:57:15Z
+    - durationMilliseconds: 22558
+      name: PushImage
+      startTime: 2018-08-08T12:58:33Z
+      steps:
+      - durationMilliseconds: 22558
+        name: PushImage
+        startTime: 2018-08-08T12:58:33Z
+    startTimestamp: 2018-08-08T12:57:05Z
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: 2018-08-08T12:57:05Z
+    generation: 1
+    labels:
+      app: cakephp-ex
+    name: cakephp-ex
+    namespace: liber-poc-1
+    resourceVersion: "52586"
+    selfLink: /apis/image.openshift.io/v1/namespaces/liber-poc-1/imagestreams/cakephp-ex
+    uid: 8d36d8be-9b0a-11e8-a81e-028289a47334
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: docker-registry.default.svc:5000/liber-poc-1/cakephp-ex
+    tags:
+    - items:
+      - created: 2018-08-08T12:58:55Z
+        dockerImageReference: docker-registry.default.svc:5000/liber-poc-1/cakephp-ex@sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d
+        generation: 1
+        image: sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: 2018-08-08T12:46:57Z
+    creationTimestamp: 2018-08-08T12:46:56Z
+    generation: 2
+    labels:
+      app: liberpoc
+    name: liberpoc
+    namespace: liber-poc-1
+    resourceVersion: "51065"
+    selfLink: /apis/image.openshift.io/v1/namespaces/liber-poc-1/imagestreams/liberpoc
+    uid: 2226c9b7-9b09-11e8-a81e-028289a47334
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+        openshift.io/imported-from: chetanpatil17/liberpoc:firsttry
+      from:
+        kind: DockerImage
+        name: chetanpatil17/liberpoc:firsttry
+      generation: 2
+      importPolicy: {}
+      name: firsttry
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: docker-registry.default.svc:5000/liber-poc-1/liberpoc
+    tags:
+    - items:
+      - created: 2018-08-08T12:46:57Z
+        dockerImageReference: chetanpatil17/liberpoc@sha256:8b3459d341914eea62be34fcbcdc771f42ad1831b86dbd7a7d75706e3703fda7
+        generation: 2
+        image: sha256:8b3459d341914eea62be34fcbcdc771f42ad1831b86dbd7a7d75706e3703fda7
+      tag: firsttry
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+      openshift.io/host.generated: "true"
+    creationTimestamp: 2018-08-08T12:57:05Z
+    labels:
+      app: cakephp-ex
+    name: cakephp-ex
+    namespace: liber-poc-1
+    resourceVersion: "52345"
+    selfLink: /apis/route.openshift.io/v1/namespaces/liber-poc-1/routes/cakephp-ex
+    uid: 8d38e066-9b0a-11e8-a81e-028289a47334
+  spec:
+    host: cakephp-ex-liber-poc-1.apps006.amosdemo.io
+    port:
+      targetPort: 8080-tcp
+    to:
+      kind: Service
+      name: cakephp-ex
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: 2018-08-08T12:57:05Z
+        status: "True"
+        type: Admitted
+      host: cakephp-ex-liber-poc-1.apps006.amosdemo.io
+      routerName: router
+      wildcardPolicy: None
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/build.name: cakephp-ex-1
+      openshift.io/scc: privileged
+    creationTimestamp: 2018-08-08T12:57:05Z
+    labels:
+      openshift.io/build.name: cakephp-ex-1
+    name: cakephp-ex-1-build
+    namespace: liber-poc-1
+    ownerReferences:
+    - apiVersion: build.openshift.io/v1
+      controller: true
+      kind: Build
+      name: cakephp-ex-1
+      uid: 8d3d0a83-9b0a-11e8-a81e-028289a47334
+    resourceVersion: "52604"
+    selfLink: /api/v1/namespaces/liber-poc-1/pods/cakephp-ex-1-build
+    uid: 8d4041dd-9b0a-11e8-a81e-028289a47334
+  spec:
+    containers:
+    - args:
+      - --loglevel=0
+      command:
+      - openshift-sti-build
+      env:
+      - name: BUILD
+        value: |
+          {"kind":"Build","apiVersion":"v1","metadata":{"name":"cakephp-ex-1","namespace":"liber-poc-1","selfLink":"/apis/build.openshift.io/v1/namespaces/liber-poc-1/builds/cakephp-ex-1","uid":"8d3d0a83-9b0a-11e8-a81e-028289a47334","resourceVersion":"52348","creationTimestamp":"2018-08-08T12:57:05Z","labels":{"app":"cakephp-ex","buildconfig":"cakephp-ex","openshift.io/build-config.name":"cakephp-ex","openshift.io/build.start-policy":"Serial"},"annotations":{"openshift.io/build-config.name":"cakephp-ex","openshift.io/build.number":"1"},"ownerReferences":[{"apiVersion":"build.openshift.io/v1","kind":"BuildConfig","name":"cakephp-ex","uid":"8d37a9e3-9b0a-11e8-a81e-028289a47334","controller":true}]},"spec":{"serviceAccount":"builder","source":{"type":"Git","git":{"uri":"https://github.com/openshift/cakephp-ex.git","ref":"master"}},"strategy":{"type":"Source","sourceStrategy":{"from":{"kind":"DockerImage","name":"registry.access.redhat.com/rhscl/php-71-rhel7@sha256:c20188e7775607c5bbb9b526a041a526c5dc0be749d2a071f73e7d81c0066bdf"}}},"output":{"to":{"kind":"DockerImage","name":"docker-registry.default.svc:5000/liber-poc-1/cakephp-ex:latest"},"pushSecret":{"name":"builder-dockercfg-8jc2g"}},"resources":{},"postCommit":{},"nodeSelector":null,"triggeredBy":[{"message":"Build configuration change"}]},"status":{"phase":"New","outputDockerImageReference":"docker-registry.default.svc:5000/liber-poc-1/cakephp-ex:latest","config":{"kind":"BuildConfig","namespace":"liber-poc-1","name":"cakephp-ex"},"output":{}}}
+      - name: SOURCE_REPOSITORY
+        value: https://github.com/openshift/cakephp-ex.git
+      - name: SOURCE_URI
+        value: https://github.com/openshift/cakephp-ex.git
+      - name: SOURCE_REF
+        value: master
+      - name: ORIGIN_VERSION
+        value: v3.9.33
+      - name: ALLOWED_UIDS
+        value: 1-
+      - name: DROP_CAPS
+        value: KILL,MKNOD,SETGID,SETUID
+      - name: PUSH_DOCKERCFG_PATH
+        value: /var/run/secrets/openshift.io/push
+      image: registry.access.redhat.com/openshift3/ose-sti-builder:v3.9.33
+      imagePullPolicy: IfNotPresent
+      name: sti-build
+      resources: {}
+      securityContext:
+        privileged: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: FallbackToLogsOnError
+      volumeMounts:
+      - mountPath: /tmp/build
+        name: buildworkdir
+      - mountPath: /var/run/docker.sock
+        name: docker-socket
+      - mountPath: /var/run/crio/crio.sock
+        name: crio-socket
+      - mountPath: /var/run/secrets/openshift.io/push
+        name: builder-dockercfg-8jc2g-push
+        readOnly: true
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: builder-token-6586m
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    imagePullSecrets:
+    - name: builder-dockercfg-8jc2g
+    initContainers:
+    - args:
+      - --loglevel=0
+      command:
+      - openshift-git-clone
+      env:
+      - name: BUILD
+        value: |
+          {"kind":"Build","apiVersion":"v1","metadata":{"name":"cakephp-ex-1","namespace":"liber-poc-1","selfLink":"/apis/build.openshift.io/v1/namespaces/liber-poc-1/builds/cakephp-ex-1","uid":"8d3d0a83-9b0a-11e8-a81e-028289a47334","resourceVersion":"52348","creationTimestamp":"2018-08-08T12:57:05Z","labels":{"app":"cakephp-ex","buildconfig":"cakephp-ex","openshift.io/build-config.name":"cakephp-ex","openshift.io/build.start-policy":"Serial"},"annotations":{"openshift.io/build-config.name":"cakephp-ex","openshift.io/build.number":"1"},"ownerReferences":[{"apiVersion":"build.openshift.io/v1","kind":"BuildConfig","name":"cakephp-ex","uid":"8d37a9e3-9b0a-11e8-a81e-028289a47334","controller":true}]},"spec":{"serviceAccount":"builder","source":{"type":"Git","git":{"uri":"https://github.com/openshift/cakephp-ex.git","ref":"master"}},"strategy":{"type":"Source","sourceStrategy":{"from":{"kind":"DockerImage","name":"registry.access.redhat.com/rhscl/php-71-rhel7@sha256:c20188e7775607c5bbb9b526a041a526c5dc0be749d2a071f73e7d81c0066bdf"}}},"output":{"to":{"kind":"DockerImage","name":"docker-registry.default.svc:5000/liber-poc-1/cakephp-ex:latest"},"pushSecret":{"name":"builder-dockercfg-8jc2g"}},"resources":{},"postCommit":{},"nodeSelector":null,"triggeredBy":[{"message":"Build configuration change"}]},"status":{"phase":"New","outputDockerImageReference":"docker-registry.default.svc:5000/liber-poc-1/cakephp-ex:latest","config":{"kind":"BuildConfig","namespace":"liber-poc-1","name":"cakephp-ex"},"output":{}}}
+      - name: SOURCE_REPOSITORY
+        value: https://github.com/openshift/cakephp-ex.git
+      - name: SOURCE_URI
+        value: https://github.com/openshift/cakephp-ex.git
+      - name: SOURCE_REF
+        value: master
+      - name: ORIGIN_VERSION
+        value: v3.9.33
+      - name: ALLOWED_UIDS
+        value: 1-
+      - name: DROP_CAPS
+        value: KILL,MKNOD,SETGID,SETUID
+      image: registry.access.redhat.com/openshift3/ose-sti-builder:v3.9.33
+      imagePullPolicy: IfNotPresent
+      name: git-clone
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: FallbackToLogsOnError
+      volumeMounts:
+      - mountPath: /tmp/build
+        name: buildworkdir
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: builder-token-6586m
+        readOnly: true
+    - args:
+      - --loglevel=0
+      command:
+      - openshift-manage-dockerfile
+      env:
+      - name: BUILD
+        value: |
+          {"kind":"Build","apiVersion":"v1","metadata":{"name":"cakephp-ex-1","namespace":"liber-poc-1","selfLink":"/apis/build.openshift.io/v1/namespaces/liber-poc-1/builds/cakephp-ex-1","uid":"8d3d0a83-9b0a-11e8-a81e-028289a47334","resourceVersion":"52348","creationTimestamp":"2018-08-08T12:57:05Z","labels":{"app":"cakephp-ex","buildconfig":"cakephp-ex","openshift.io/build-config.name":"cakephp-ex","openshift.io/build.start-policy":"Serial"},"annotations":{"openshift.io/build-config.name":"cakephp-ex","openshift.io/build.number":"1"},"ownerReferences":[{"apiVersion":"build.openshift.io/v1","kind":"BuildConfig","name":"cakephp-ex","uid":"8d37a9e3-9b0a-11e8-a81e-028289a47334","controller":true}]},"spec":{"serviceAccount":"builder","source":{"type":"Git","git":{"uri":"https://github.com/openshift/cakephp-ex.git","ref":"master"}},"strategy":{"type":"Source","sourceStrategy":{"from":{"kind":"DockerImage","name":"registry.access.redhat.com/rhscl/php-71-rhel7@sha256:c20188e7775607c5bbb9b526a041a526c5dc0be749d2a071f73e7d81c0066bdf"}}},"output":{"to":{"kind":"DockerImage","name":"docker-registry.default.svc:5000/liber-poc-1/cakephp-ex:latest"},"pushSecret":{"name":"builder-dockercfg-8jc2g"}},"resources":{},"postCommit":{},"nodeSelector":null,"triggeredBy":[{"message":"Build configuration change"}]},"status":{"phase":"New","outputDockerImageReference":"docker-registry.default.svc:5000/liber-poc-1/cakephp-ex:latest","config":{"kind":"BuildConfig","namespace":"liber-poc-1","name":"cakephp-ex"},"output":{}}}
+      - name: SOURCE_REPOSITORY
+        value: https://github.com/openshift/cakephp-ex.git
+      - name: SOURCE_URI
+        value: https://github.com/openshift/cakephp-ex.git
+      - name: SOURCE_REF
+        value: master
+      - name: ORIGIN_VERSION
+        value: v3.9.33
+      - name: ALLOWED_UIDS
+        value: 1-
+      - name: DROP_CAPS
+        value: KILL,MKNOD,SETGID,SETUID
+      image: registry.access.redhat.com/openshift3/ose-sti-builder:v3.9.33
+      imagePullPolicy: IfNotPresent
+      name: manage-dockerfile
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: FallbackToLogsOnError
+      volumeMounts:
+      - mountPath: /tmp/build
+        name: buildworkdir
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: builder-token-6586m
+        readOnly: true
+    nodeName: ip-172-31-75-44.eu-central-1.compute.internal
+    nodeSelector:
+      node-role.kubernetes.io/compute: "true"
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: builder
+    serviceAccountName: builder
+    terminationGracePeriodSeconds: 30
+    volumes:
+    - emptyDir: {}
+      name: buildworkdir
+    - hostPath:
+        path: /var/run/docker.sock
+        type: ""
+      name: docker-socket
+    - hostPath:
+        path: /var/run/crio/crio.sock
+        type: ""
+      name: crio-socket
+    - name: builder-dockercfg-8jc2g-push
+      secret:
+        defaultMode: 384
+        secretName: builder-dockercfg-8jc2g
+    - name: builder-token-6586m
+      secret:
+        defaultMode: 420
+        secretName: builder-token-6586m
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:57:14Z
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:58:56Z
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:57:05Z
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://cf0107cd98faaa7348aab67b2cbef85cd1eb98c392ea354ddf97e8d434042d35
+      image: registry.access.redhat.com/openshift3/ose-sti-builder:v3.9.33
+      imageID: docker-pullable://registry.access.redhat.com/openshift3/ose-sti-builder@sha256:b5498b69d7d7a62410d75f570662777c85697a556236a4f0289116acf9dc24cb
+      lastState: {}
+      name: sti-build
+      ready: false
+      restartCount: 0
+      state:
+        terminated:
+          containerID: docker://cf0107cd98faaa7348aab67b2cbef85cd1eb98c392ea354ddf97e8d434042d35
+          exitCode: 0
+          finishedAt: 2018-08-08T12:58:56Z
+          reason: Completed
+          startedAt: 2018-08-08T12:57:15Z
+    hostIP: 172.31.75.44
+    initContainerStatuses:
+    - containerID: docker://f6e43b22d784cb01d78586d583fe7d340fbaea8a58b6e202a85d3c2f938b831b
+      image: registry.access.redhat.com/openshift3/ose-sti-builder:v3.9.33
+      imageID: docker-pullable://registry.access.redhat.com/openshift3/ose-sti-builder@sha256:b5498b69d7d7a62410d75f570662777c85697a556236a4f0289116acf9dc24cb
+      lastState: {}
+      name: git-clone
+      ready: true
+      restartCount: 0
+      state:
+        terminated:
+          containerID: docker://f6e43b22d784cb01d78586d583fe7d340fbaea8a58b6e202a85d3c2f938b831b
+          exitCode: 0
+          finishedAt: 2018-08-08T12:57:12Z
+          reason: Completed
+          startedAt: 2018-08-08T12:57:09Z
+    - containerID: docker://229f7d55c03de23e635d612d8afaac1ecd9b781d15db360eead98f40ab9fa72c
+      image: registry.access.redhat.com/openshift3/ose-sti-builder:v3.9.33
+      imageID: docker-pullable://registry.access.redhat.com/openshift3/ose-sti-builder@sha256:b5498b69d7d7a62410d75f570662777c85697a556236a4f0289116acf9dc24cb
+      lastState: {}
+      name: manage-dockerfile
+      ready: true
+      restartCount: 0
+      state:
+        terminated:
+          containerID: docker://229f7d55c03de23e635d612d8afaac1ecd9b781d15db360eead98f40ab9fa72c
+          exitCode: 0
+          finishedAt: 2018-08-08T12:57:14Z
+          reason: Completed
+          startedAt: 2018-08-08T12:57:14Z
+    phase: Succeeded
+    podIP: 10.129.0.34
+    qosClass: BestEffort
+    startTime: 2018-08-08T12:57:05Z
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/deployment-config.latest-version: "1"
+      openshift.io/deployment-config.name: cakephp-ex
+      openshift.io/deployment.name: cakephp-ex-1
+      openshift.io/scc: restricted
+    creationTimestamp: 2018-08-08T12:58:59Z
+    generateName: cakephp-ex-1-
+    labels:
+      app: cakephp-ex
+      deployment: cakephp-ex-1
+      deploymentconfig: cakephp-ex
+    name: cakephp-ex-1-wzq76
+    namespace: liber-poc-1
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicationController
+      name: cakephp-ex-1
+      uid: cefe7e80-9b0a-11e8-a81e-028289a47334
+    resourceVersion: "52639"
+    selfLink: /api/v1/namespaces/liber-poc-1/pods/cakephp-ex-1-wzq76
+    uid: d10b023a-9b0a-11e8-a81e-028289a47334
+  spec:
+    containers:
+    - image: docker-registry.default.svc:5000/liber-poc-1/cakephp-ex@sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d
+      imagePullPolicy: Always
+      name: cakephp-ex
+      ports:
+      - containerPort: 8080
+        protocol: TCP
+      - containerPort: 8443
+        protocol: TCP
+      resources: {}
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000180000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-kh7qx
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    imagePullSecrets:
+    - name: default-dockercfg-w2svl
+    nodeName: ip-172-31-75-44.eu-central-1.compute.internal
+    nodeSelector:
+      node-role.kubernetes.io/compute: "true"
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000180000
+      seLinuxOptions:
+        level: s0:c13,c12
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    volumes:
+    - name: default-token-kh7qx
+      secret:
+        defaultMode: 420
+        secretName: default-token-kh7qx
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:58:59Z
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:59:03Z
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:58:59Z
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://88aad0a000e28775aeac374ebd213808e1b52669d9fe9a044ea4425ff3dd8079
+      image: docker-registry.default.svc:5000/liber-poc-1/cakephp-ex:latest
+      imageID: docker-pullable://docker-registry.default.svc:5000/liber-poc-1/cakephp-ex@sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d
+      lastState: {}
+      name: cakephp-ex
+      ready: true
+      restartCount: 0
+      state:
+        running:
+          startedAt: 2018-08-08T12:59:03Z
+    hostIP: 172.31.75.44
+    phase: Running
+    podIP: 10.129.0.36
+    qosClass: BestEffort
+    startTime: 2018-08-08T12:58:59Z
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/deployment-config.latest-version: "1"
+      openshift.io/deployment-config.name: liberpoc
+      openshift.io/deployment.name: liberpoc-1
+      openshift.io/generated-by: OpenShiftWebConsole
+      openshift.io/scc: restricted
+    creationTimestamp: 2018-08-08T12:46:59Z
+    generateName: liberpoc-1-
+    labels:
+      app: liberpoc
+      deployment: liberpoc-1
+      deploymentconfig: liberpoc
+    name: liberpoc-1-8fxmf
+    namespace: liber-poc-1
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicationController
+      name: liberpoc-1
+      uid: 2298e2e2-9b09-11e8-a81e-028289a47334
+    resourceVersion: "1037801"
+    selfLink: /api/v1/namespaces/liber-poc-1/pods/liberpoc-1-8fxmf
+    uid: 2413fffb-9b09-11e8-a81e-028289a47334
+  spec:
+    containers:
+    - image: chetanpatil17/liberpoc@sha256:8b3459d341914eea62be34fcbcdc771f42ad1831b86dbd7a7d75706e3703fda7
+      imagePullPolicy: IfNotPresent
+      name: liberpoc
+      ports:
+      - containerPort: 22
+        protocol: TCP
+      - containerPort: 3171
+        protocol: TCP
+      - containerPort: 3371
+        protocol: TCP
+      - containerPort: 5432
+        protocol: TCP
+      - containerPort: 9080
+        protocol: TCP
+      resources: {}
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000180000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-kh7qx
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    imagePullSecrets:
+    - name: default-dockercfg-w2svl
+    nodeName: ip-172-31-75-44.eu-central-1.compute.internal
+    nodeSelector:
+      node-role.kubernetes.io/compute: "true"
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000180000
+      seLinuxOptions:
+        level: s0:c13,c12
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    volumes:
+    - name: default-token-kh7qx
+      secret:
+        defaultMode: 420
+        secretName: default-token-kh7qx
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:46:59Z
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-14T12:12:55Z
+      message: 'containers with unready status: [liberpoc]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:46:59Z
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://33ccd8cd7a6df9182d6d361e22038f6254748bfc05963f5bac1bbd1fa1c20a12
+      image: sha256:c81f1711a380b93e44d746a2b36d1d84921fbbaa2216ea274b0a9ac97e4bf5c2
+      imageID: docker-pullable://docker.io/chetanpatil17/liberpoc@sha256:8b3459d341914eea62be34fcbcdc771f42ad1831b86dbd7a7d75706e3703fda7
+      lastState:
+        terminated:
+          containerID: docker://33ccd8cd7a6df9182d6d361e22038f6254748bfc05963f5bac1bbd1fa1c20a12
+          exitCode: 0
+          finishedAt: 2018-08-14T12:18:06Z
+          reason: Completed
+          startedAt: 2018-08-14T12:18:05Z
+      name: liberpoc
+      ready: false
+      restartCount: 1686
+      state:
+        waiting:
+          message: Back-off 5m0s restarting failed container=liberpoc pod=liberpoc-1-8fxmf_liber-poc-1(2413fffb-9b09-11e8-a81e-028289a47334)
+          reason: CrashLoopBackOff
+    hostIP: 172.31.75.44
+    phase: Running
+    podIP: 10.129.0.32
+    qosClass: BestEffort
+    startTime: 2018-08-08T12:46:59Z
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      openshift.io/deployment-config.name: mysql
+      openshift.io/deployment.name: mysql-1
+      openshift.io/scc: restricted
+    creationTimestamp: 2018-08-08T12:50:58Z
+    labels:
+      openshift.io/deployer-pod-for.name: mysql-1
+    name: mysql-1-deploy
+    namespace: liber-poc-1
+    ownerReferences:
+    - apiVersion: v1
+      kind: ReplicationController
+      name: mysql-1
+      uid: b282caf0-9b09-11e8-a81e-028289a47334
+    resourceVersion: "52884"
+    selfLink: /api/v1/namespaces/liber-poc-1/pods/mysql-1-deploy
+    uid: b2852ed3-9b09-11e8-a81e-028289a47334
+  spec:
+    activeDeadlineSeconds: 21600
+    containers:
+    - env:
+      - name: KUBERNETES_MASTER
+        value: https://ip-172-31-64-127.eu-central-1.compute.internal:8443
+      - name: OPENSHIFT_MASTER
+        value: https://ip-172-31-64-127.eu-central-1.compute.internal:8443
+      - name: BEARER_TOKEN_FILE
+        value: /var/run/secrets/kubernetes.io/serviceaccount/token
+      - name: OPENSHIFT_CA_DATA
+        value: |
+          -----BEGIN CERTIFICATE-----
+          MIIC6jCCAdKgAwIBAgIBATANBgkqhkiG9w0BAQsFADAmMSQwIgYDVQQDDBtvcGVu
+          c2hpZnQtc2lnbmVyQDE1MzM3MDc4MTkwHhcNMTgwODA4MDU1NjU5WhcNMjMwODA3
+          MDU1NzAwWjAmMSQwIgYDVQQDDBtvcGVuc2hpZnQtc2lnbmVyQDE1MzM3MDc4MTkw
+          ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDPNc+1ZclqYesm7uoGV8dq
+          3e2nW/MAtaYzu3rkWPTjOeaPv6F9km/Hsr1+lV5TY2rIDnDIBoOvcIJNGjtFuEbY
+          f7AWhGocPHXSFBus53pRJCGxUKKE/jHvZRzcOk1aGARBL1iexTwIIvJdiFvWFmr1
+          QofruxGrWhGowXOexczRxFyfVc+TX1i/DO0lNkTZtsLpidMm0THbHmWCftlgtP2O
+          y42trjdPnOK81Y52xaEHc1JiPQ8HaITyjz8NBBGN0dMCvaZtIb2Ad5uScL4rNoNr
+          XvyKxHBFR0N9E0+hwPtZgaai23WpadsluFJoYZ7v45yiedwdqSsUaTPmzqoZIINh
+          AgMBAAGjIzAhMA4GA1UdDwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MA0GCSqG
+          SIb3DQEBCwUAA4IBAQCoUhudHy4wZMbnEpoaecQLlkRz/rYjBIhAczY9wCrwjptq
+          nu6ViPz0t0GAuMDRSeGR/y+MsMmLuu3P4u6B7DEprcLtdTgg9InhnG4jel1uwnV4
+          jIHaVOHQsZvCjo6RpKayTmiNk6HtP/h0YIitg9Ahmlf5iqE5S0uy40lRenz2a3CA
+          8B5pdgzq8NfAP4IZadTlsDEhEkOqTP1AQSKutcJ/IaDf3czlbaC/WnCgRSiOxSGU
+          Z0+YAZApgbY6W9jgitQZ+xYwZe4LgtdssOjKLe0zbfVT3FxfnzgUUYNYpwu/3Ea1
+          G4upJJRX4M+PuIVrTpLCYVYKKi0BAxOBLnUC4JnT
+          -----END CERTIFICATE-----
+      - name: OPENSHIFT_DEPLOYMENT_NAME
+        value: mysql-1
+      - name: OPENSHIFT_DEPLOYMENT_NAMESPACE
+        value: liber-poc-1
+      image: registry.access.redhat.com/openshift3/ose-deployer:v3.9.33
+      imagePullPolicy: IfNotPresent
+      name: deployment
+      resources: {}
+      securityContext:
+        capabilities:
+          drop:
+          - KILL
+          - MKNOD
+          - SETGID
+          - SETUID
+        runAsUser: 1000180000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: deployer-token-mgm4q
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    imagePullSecrets:
+    - name: deployer-dockercfg-n6wqn
+    nodeName: ip-172-31-75-44.eu-central-1.compute.internal
+    nodeSelector:
+      node-role.kubernetes.io/compute: "true"
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 1000180000
+      seLinuxOptions:
+        level: s0:c13,c12
+    serviceAccount: deployer
+    serviceAccountName: deployer
+    terminationGracePeriodSeconds: 10
+    volumes:
+    - name: deployer-token-mgm4q
+      secret:
+        defaultMode: 420
+        secretName: deployer-token-mgm4q
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:50:58Z
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T13:01:01Z
+      message: 'containers with unready status: [deployment]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: 2018-08-08T12:50:58Z
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://aef75535c00c412223b12179b6e78a68944f610ce0b8206099048ad778063566
+      image: registry.access.redhat.com/openshift3/ose-deployer:v3.9.33
+      imageID: docker-pullable://registry.access.redhat.com/openshift3/ose-deployer@sha256:b1b1ed773bbcac0c19dfe852b01fa7522306b3831c4d583ac168d84266e45264
+      lastState: {}
+      name: deployment
+      ready: false
+      restartCount: 0
+      state:
+        terminated:
+          containerID: docker://aef75535c00c412223b12179b6e78a68944f610ce0b8206099048ad778063566
+          exitCode: 1
+          finishedAt: 2018-08-08T13:01:01Z
+          reason: Error
+          startedAt: 2018-08-08T12:51:00Z
+    hostIP: 172.31.75.44
+    phase: Failed
+    podIP: 10.129.0.33
+    qosClass: BestEffort
+    startTime: 2018-08-08T12:50:58Z
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      openshift.io/deployer-pod.completed-at: 2018-08-08 12:59:03 +0000 UTC
+      openshift.io/deployer-pod.created-at: 2018-08-08 12:58:55 +0000 UTC
+      openshift.io/deployer-pod.name: cakephp-ex-1-deploy
+      openshift.io/deployment-config.latest-version: "1"
+      openshift.io/deployment-config.name: cakephp-ex
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "1"
+      openshift.io/deployment.status-reason: config change
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"cakephp-ex","namespace":"liber-poc-1","selfLink":"/apis/apps.openshift.io/v1/namespaces/liber-poc-1/deploymentconfigs/cakephp-ex","uid":"8d376a98-9b0a-11e8-a81e-028289a47334","resourceVersion":"52588","generation":2,"creationTimestamp":"2018-08-08T12:57:05Z","labels":{"app":"cakephp-ex"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{},"activeDeadlineSeconds":21600},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["cakephp-ex"],"from":{"kind":"ImageStreamTag","namespace":"liber-poc-1","name":"cakephp-ex:latest"},"lastTriggeredImage":"docker-registry.default.svc:5000/liber-poc-1/cakephp-ex@sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"deploymentconfig":"cakephp-ex"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"cakephp-ex","deploymentconfig":"cakephp-ex"}},"spec":{"containers":[{"name":"cakephp-ex","image":"docker-registry.default.svc:5000/liber-poc-1/cakephp-ex@sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d","ports":[{"containerPort":8080,"protocol":"TCP"},{"containerPort":8443,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{},"schedulerName":"default-scheduler"}}},"status":{"latestVersion":1,"observedGeneration":1,"replicas":0,"updatedReplicas":0,"availableReplicas":0,"unavailableReplicas":0,"details":{"message":"config change","causes":[{"type":"ConfigChange"}]},"conditions":[{"type":"Available","status":"False","lastUpdateTime":"2018-08-08T12:57:05Z","lastTransitionTime":"2018-08-08T12:57:05Z","message":"Deployment config does not have minimum availability."}]}}
+    creationTimestamp: 2018-08-08T12:58:55Z
+    generation: 2
+    labels:
+      app: cakephp-ex
+      openshift.io/deployment-config.name: cakephp-ex
+    name: cakephp-ex-1
+    namespace: liber-poc-1
+    ownerReferences:
+    - apiVersion: apps.openshift.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DeploymentConfig
+      name: cakephp-ex
+      uid: 8d376a98-9b0a-11e8-a81e-028289a47334
+    resourceVersion: "52646"
+    selfLink: /api/v1/namespaces/liber-poc-1/replicationcontrollers/cakephp-ex-1
+    uid: cefe7e80-9b0a-11e8-a81e-028289a47334
+  spec:
+    replicas: 1
+    selector:
+      deployment: cakephp-ex-1
+      deploymentconfig: cakephp-ex
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "1"
+          openshift.io/deployment-config.name: cakephp-ex
+          openshift.io/deployment.name: cakephp-ex-1
+        creationTimestamp: null
+        labels:
+          app: cakephp-ex
+          deployment: cakephp-ex-1
+          deploymentconfig: cakephp-ex
+      spec:
+        containers:
+        - image: docker-registry.default.svc:5000/liber-poc-1/cakephp-ex@sha256:4a33e7ebe9e16d0c364b5cb0f3282325ce7f86cc8841dbb5ff04271c1e944b5d
+          imagePullPolicy: Always
+          name: cakephp-ex
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          - containerPort: 8443
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 2
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      openshift.io/deployer-pod.completed-at: 2018-08-08 12:52:28 +0000 UTC
+      openshift.io/deployer-pod.created-at: 2018-08-08 12:46:57 +0000 UTC
+      openshift.io/deployer-pod.name: liberpoc-1-deploy
+      openshift.io/deployment-config.latest-version: "1"
+      openshift.io/deployment-config.name: liberpoc
+      openshift.io/deployment.phase: Complete
+      openshift.io/deployment.replicas: "1"
+      openshift.io/deployment.status-reason: config change
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"liberpoc","namespace":"liber-poc-1","selfLink":"/apis/apps.openshift.io/v1/namespaces/liber-poc-1/deploymentconfigs/liberpoc","uid":"2226d6db-9b09-11e8-a81e-028289a47334","resourceVersion":"51067","generation":2,"creationTimestamp":"2018-08-08T12:46:56Z","labels":{"app":"liberpoc"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{},"activeDeadlineSeconds":21600},"triggers":[{"type":"ConfigChange"},{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["liberpoc"],"from":{"kind":"ImageStreamTag","namespace":"liber-poc-1","name":"liberpoc:firsttry"},"lastTriggeredImage":"chetanpatil17/liberpoc@sha256:8b3459d341914eea62be34fcbcdc771f42ad1831b86dbd7a7d75706e3703fda7"}}],"replicas":1,"test":false,"selector":{"app":"liberpoc","deploymentconfig":"liberpoc"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"liberpoc","deploymentconfig":"liberpoc"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"containers":[{"name":"liberpoc","image":"chetanpatil17/liberpoc@sha256:8b3459d341914eea62be34fcbcdc771f42ad1831b86dbd7a7d75706e3703fda7","ports":[{"containerPort":22,"protocol":"TCP"},{"containerPort":3171,"protocol":"TCP"},{"containerPort":3371,"protocol":"TCP"},{"containerPort":5432,"protocol":"TCP"},{"containerPort":9080,"protocol":"TCP"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"IfNotPresent"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{},"schedulerName":"default-scheduler"}}},"status":{"latestVersion":1,"observedGeneration":1,"replicas":0,"updatedReplicas":0,"availableReplicas":0,"unavailableReplicas":0,"details":{"message":"config change","causes":[{"type":"ConfigChange"}]},"conditions":[{"type":"Available","status":"False","lastUpdateTime":"2018-08-08T12:46:56Z","lastTransitionTime":"2018-08-08T12:46:56Z","message":"Deployment config does not have minimum availability."}]}}
+    creationTimestamp: 2018-08-08T12:46:57Z
+    generation: 2
+    labels:
+      app: liberpoc
+      openshift.io/deployment-config.name: liberpoc
+    name: liberpoc-1
+    namespace: liber-poc-1
+    ownerReferences:
+    - apiVersion: apps.openshift.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DeploymentConfig
+      name: liberpoc
+      uid: 2226d6db-9b09-11e8-a81e-028289a47334
+    resourceVersion: "1037173"
+    selfLink: /api/v1/namespaces/liber-poc-1/replicationcontrollers/liberpoc-1
+    uid: 2298e2e2-9b09-11e8-a81e-028289a47334
+  spec:
+    replicas: 1
+    selector:
+      app: liberpoc
+      deployment: liberpoc-1
+      deploymentconfig: liberpoc
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "1"
+          openshift.io/deployment-config.name: liberpoc
+          openshift.io/deployment.name: liberpoc-1
+          openshift.io/generated-by: OpenShiftWebConsole
+        creationTimestamp: null
+        labels:
+          app: liberpoc
+          deployment: liberpoc-1
+          deploymentconfig: liberpoc
+      spec:
+        containers:
+        - image: chetanpatil17/liberpoc@sha256:8b3459d341914eea62be34fcbcdc771f42ad1831b86dbd7a7d75706e3703fda7
+          imagePullPolicy: IfNotPresent
+          name: liberpoc
+          ports:
+          - containerPort: 22
+            protocol: TCP
+          - containerPort: 3171
+            protocol: TCP
+          - containerPort: 3371
+            protocol: TCP
+          - containerPort: 5432
+            protocol: TCP
+          - containerPort: 9080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    fullyLabeledReplicas: 1
+    observedGeneration: 2
+    replicas: 1
+- apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/desired-replicas: "1"
+      openshift.io/deployer-pod.completed-at: 2018-08-08 13:01:01 +0000 UTC
+      openshift.io/deployer-pod.created-at: 2018-08-08 12:50:58 +0000 UTC
+      openshift.io/deployer-pod.name: mysql-1-deploy
+      openshift.io/deployment-config.latest-version: "1"
+      openshift.io/deployment-config.name: mysql
+      openshift.io/deployment.phase: Failed
+      openshift.io/deployment.replicas: "0"
+      openshift.io/deployment.status-reason: config change
+      openshift.io/encoded-deployment-config: |
+        {"kind":"DeploymentConfig","apiVersion":"v1","metadata":{"name":"mysql","namespace":"liber-poc-1","selfLink":"/apis/apps.openshift.io/v1/namespaces/liber-poc-1/deploymentconfigs/mysql","uid":"b27f4238-9b09-11e8-a81e-028289a47334","resourceVersion":"51589","generation":2,"creationTimestamp":"2018-08-08T12:50:58Z","labels":{"app":"mysql-persistent","template":"mysql-persistent-template"},"annotations":{"template.alpha.openshift.io/wait-for-ready":"true"}},"spec":{"strategy":{"type":"Recreate","recreateParams":{"timeoutSeconds":600},"resources":{},"activeDeadlineSeconds":21600},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["mysql"],"from":{"kind":"ImageStreamTag","namespace":"openshift","name":"mysql:5.7"},"lastTriggeredImage":"registry.access.redhat.com/rhscl/mysql-57-rhel7@sha256:154cd19e9c2a9df09ad61ce61139b955499aecd2247eb32df299104c750c6feb"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"name":"mysql"},"template":{"metadata":{"creationTimestamp":null,"labels":{"name":"mysql"}},"spec":{"volumes":[{"name":"mysql-data","persistentVolumeClaim":{"claimName":"mysql"}}],"containers":[{"name":"mysql","image":"registry.access.redhat.com/rhscl/mysql-57-rhel7@sha256:154cd19e9c2a9df09ad61ce61139b955499aecd2247eb32df299104c750c6feb","ports":[{"containerPort":3306,"protocol":"TCP"}],"env":[{"name":"MYSQL_USER","valueFrom":{"secretKeyRef":{"name":"mysql","key":"database-user"}}},{"name":"MYSQL_PASSWORD","valueFrom":{"secretKeyRef":{"name":"mysql","key":"database-password"}}},{"name":"MYSQL_ROOT_PASSWORD","valueFrom":{"secretKeyRef":{"name":"mysql","key":"database-root-password"}}},{"name":"MYSQL_DATABASE","valueFrom":{"secretKeyRef":{"name":"mysql","key":"database-name"}}}],"resources":{"limits":{"memory":"512Mi"}},"volumeMounts":[{"name":"mysql-data","mountPath":"/var/lib/mysql/data"}],"livenessProbe":{"tcpSocket":{"port":3306},"initialDelaySeconds":30,"timeoutSeconds":1,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"readinessProbe":{"exec":{"command":["/bin/sh","-i","-c","MYSQL_PWD=\"$MYSQL_PASSWORD\" mysql -h 127.0.0.1 -u $MYSQL_USER -D $MYSQL_DATABASE -e 'SELECT 1'"]},"initialDelaySeconds":5,"timeoutSeconds":1,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"IfNotPresent"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{},"schedulerName":"default-scheduler"}}},"status":{"latestVersion":1,"observedGeneration":0,"replicas":0,"updatedReplicas":0,"availableReplicas":0,"unavailableReplicas":0,"details":{"message":"config change","causes":[{"type":"ConfigChange"}]}}}
+    creationTimestamp: 2018-08-08T12:50:58Z
+    generation: 3
+    labels:
+      app: mysql-persistent
+      openshift.io/deployment-config.name: mysql
+      template: mysql-persistent-template
+    name: mysql-1
+    namespace: liber-poc-1
+    ownerReferences:
+    - apiVersion: apps.openshift.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DeploymentConfig
+      name: mysql
+      uid: b27f4238-9b09-11e8-a81e-028289a47334
+    resourceVersion: "52892"
+    selfLink: /api/v1/namespaces/liber-poc-1/replicationcontrollers/mysql-1
+    uid: b282caf0-9b09-11e8-a81e-028289a47334
+  spec:
+    replicas: 0
+    selector:
+      deployment: mysql-1
+      deploymentconfig: mysql
+      name: mysql
+    template:
+      metadata:
+        annotations:
+          openshift.io/deployment-config.latest-version: "1"
+          openshift.io/deployment-config.name: mysql
+          openshift.io/deployment.name: mysql-1
+        creationTimestamp: null
+        labels:
+          deployment: mysql-1
+          deploymentconfig: mysql
+          name: mysql
+      spec:
+        containers:
+        - env:
+          - name: MYSQL_USER
+            valueFrom:
+              secretKeyRef:
+                key: database-user
+                name: mysql
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: database-password
+                name: mysql
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: database-root-password
+                name: mysql
+          - name: MYSQL_DATABASE
+            valueFrom:
+              secretKeyRef:
+                key: database-name
+                name: mysql
+          image: registry.access.redhat.com/rhscl/mysql-57-rhel7@sha256:154cd19e9c2a9df09ad61ce61139b955499aecd2247eb32df299104c750c6feb
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            tcpSocket:
+              port: 3306
+            timeoutSeconds: 1
+          name: mysql
+          ports:
+          - containerPort: 3306
+            protocol: TCP
+          readinessProbe:
+            exec:
+              command:
+              - /bin/sh
+              - -i
+              - -c
+              - MYSQL_PWD="$MYSQL_PASSWORD" mysql -h 127.0.0.1 -u $MYSQL_USER -D $MYSQL_DATABASE
+                -e 'SELECT 1'
+            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              memory: 512Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /var/lib/mysql/data
+            name: mysql-data
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - name: mysql-data
+          persistentVolumeClaim:
+            claimName: mysql
+  status:
+    observedGeneration: 3
+    replicas: 0
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: 2018-08-08T12:57:05Z
+    labels:
+      app: cakephp-ex
+    name: cakephp-ex
+    namespace: liber-poc-1
+    resourceVersion: "52342"
+    selfLink: /api/v1/namespaces/liber-poc-1/services/cakephp-ex
+    uid: 8d388c88-9b0a-11e8-a81e-028289a47334
+  spec:
+    clusterIP: 172.30.107.66
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      deploymentconfig: cakephp-ex
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftWebConsole
+    creationTimestamp: 2018-08-08T12:46:56Z
+    labels:
+      app: liberpoc
+    name: liberpoc
+    namespace: liber-poc-1
+    resourceVersion: "51061"
+    selfLink: /api/v1/namespaces/liber-poc-1/services/liberpoc
+    uid: 2229b6d5-9b09-11e8-a81e-028289a47334
+  spec:
+    clusterIP: 172.30.88.202
+    ports:
+    - name: 22-tcp
+      port: 22
+      protocol: TCP
+      targetPort: 22
+    - name: 3171-tcp
+      port: 3171
+      protocol: TCP
+      targetPort: 3171
+    - name: 3371-tcp
+      port: 3371
+      protocol: TCP
+      targetPort: 3371
+    - name: 5432-tcp
+      port: 5432
+      protocol: TCP
+      targetPort: 5432
+    - name: 9080-tcp
+      port: 9080
+      protocol: TCP
+      targetPort: 9080
+    selector:
+      deploymentconfig: liberpoc
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      template.openshift.io/expose-uri: mysql://{.spec.clusterIP}:{.spec.ports[?(.name=="mysql")].port}
+    creationTimestamp: 2018-08-08T12:50:58Z
+    labels:
+      app: mysql-persistent
+      template: mysql-persistent-template
+    name: mysql
+    namespace: liber-poc-1
+    resourceVersion: "51584"
+    selfLink: /api/v1/namespaces/liber-poc-1/services/mysql
+    uid: b27e9754-9b09-11e8-a81e-028289a47334
+  spec:
+    clusterIP: 172.30.243.159
+    ports:
+    - name: mysql
+      port: 3306
+      protocol: TCP
+      targetPort: 3306
+    selector:
+      name: mysql
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
